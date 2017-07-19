@@ -49,7 +49,7 @@
         <div class="row">
             <div class="box">
               <div class="col-lg-12">
-                  <form class="form-horizontal" action="test.php" method="POST">
+                  <form class="form-horizontal" action="connexion.php" method="POST">
                   <fieldset>
                     <!-- Text input-->
                     <div class="form-group">
@@ -77,6 +77,11 @@
                     </div>
                   </fieldset>
                 </form>
+                <tr>
+                  <td>
+                    <a href="inscription.php">S'inscrire</a>
+                  </td>
+                </tr>
               </div>
             </div>
         </div>
