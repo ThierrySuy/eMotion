@@ -24,11 +24,9 @@
 
 <div class="menu">
   <ul>
-    <a href="#"><li>LINK ONE</li></a>
-    <a href="#"><li>LINK TWO</li></a>
-    <a href="#"><li>LINK THREE</li></a>
-    <a href="#"><li>LINK FOUR</li></a>
-    <a href="#"><li>LINK FIVE</li></a>
+    <a href="./recap.php"><li>Votre récapitulatif</li></a>
+    <a href="./recherche.php"><li>Votre recherche</li></a>
+    <a href="#"><li>Votre profil</li></a>
   </ul>
 </div>
 

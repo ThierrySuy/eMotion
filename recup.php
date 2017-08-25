@@ -20,6 +20,7 @@
 			    mysqli_close($base);   
 
 			    echo "La table a bien été ajoutée!";
+			    echo "teststring";
 
 			    /* ce fichier permet de récupérer les données via le formulaire d'inscription
 
