@@ -19,36 +19,30 @@
 
 	
 
-	<div class="container-fluid col-md-3 col-md-offset-2" >
+	<div class="container-fluid col-md-3 col-md-offset-2 text-right">
 
-		<label for="nom">Nom :</label> 
-		<input type="text" class="form-control" name="nom" value="<?php if (isset($_POST['nom'])) echo htmlentities(trim($_POST['nom'])); ?>" required="">
+		<input placeholder="Nom" type="text" class="form-control" name="nom" value="<?php if (isset($_POST['nom'])) echo htmlentities(trim($_POST['nom'])); ?>" required="">
 
 		</br></br>
 		
-		<label for="date_naissance">Naissance :</label> 
-		<input type="Date" class="form-control" name="date_naissance" value="<?php if (isset($_POST['date_naissance'])) echo htmlentities(trim($_POST['date_naissance'])); ?>" required="">
+		<input placeholder="Date de Naissance" type="Date" class="form-control" name="date_naissance" value="<?php if (isset($_POST['date_naissance'])) echo htmlentities(trim($_POST['date_naissance'])); ?>" required="">
 		
 		</div>
 
-	<div class="container-fluid col-md-6 col-md-offset-1" >
+	<div class="container-fluid col-md-6 col-md-offset-1">
 
-		<label for="prenom">Prénom :</label> 
-		<input type="text" class="form-control" name="nom" value="<?php if (isset($_POST['prenom'])) echo htmlentities(trim($_POST['prenom'])); ?>" required="">
+		<input placeholder="Prenom" type="text" class="form-control" name="prenom" value="<?php if (isset($_POST['prenom'])) echo htmlentities(trim($_POST['prenom'])); ?>" required="">
 		
 		</br></br>
 
-		<label for="number">Téléphone :</label> 
-		<input type="number" class="form-control" name="telephone" value="<?php if (isset($_POST['telephone'])) echo htmlentities(trim($_POST['telephone'])); ?>" required="">
+		<input placeholder="Telephone" type="number" class="form-control" name="telephone" value="<?php if (isset($_POST['telephone'])) echo htmlentities(trim($_POST['telephone'])); ?>" required="">
 
 		</br></div>
 		
-		<div class="col-md-12"></div>
 
-		<div class="container-fluid col-md-6 col-md-offset-3"></br>
+	<div class="container-fluid col-md-8 col-md-offset-6"></br>
 
-		<label for="adresse">Adresse Postale :</label> 
-		<input type="text" class="form-control" name="adresse" value="<?php if (isset($_POST['adresse'])) echo htmlentities(trim($_POST['adresse'])); ?>" required="">
+		<input placeholder="Adresse Postale" type="text" class="form-control" name="adresse" value="<?php if (isset($_POST['adresse'])) echo htmlentities(trim($_POST['adresse'])); ?>" required="">
 	
 
 		</div></br>
@@ -56,35 +50,31 @@
 		<div class="col-md-12"></div>
 	
 
-	<div class="container-fluid col-md-3 col-md-offset-2"></br>
+	<div class="container-fluid col-md-3 col-md-offset-2 text-right"></br>
 
-		<label for="numero_permis">N° Permis :</label> 
-		<input type="text" class="form-control" name="numero_permis" value="<?php if (isset($_POST['numero_permis'])) echo htmlentities(trim($_POST['numero_permis'])); ?>" required=""></br>
+		<input placeholder="N° Permis" type="text" class="form-control" name="numero_permis" value="<?php if (isset($_POST['numero_permis'])) echo htmlentities(trim($_POST['numero_permis'])); ?>" required=""></br>
 		
 		</br></br>
 
 		
-		<label for="mail">E-Mail :</label> 
-		<input  type="text" class="form-control" name="mail" value="<?php if (isset($_POST['mail'])) echo htmlentities(trim($_POST['mail'])); ?>" required="">
+		<input  placeholder="E-mail" type="text" class="form-control" name="mail" value="<?php if (isset($_POST['mail'])) echo htmlentities(trim($_POST['mail'])); ?>" required="">
 
 		</div>
 
 	<div class="container-fluid col-md-6 col-md-offset-1"></br>
-
-		<label for="password">Mot de Passe :</label> 
-		<input  type="password" class="form-control" name="mdp" value="<?php if (isset($_POST['mdp'])) echo htmlentities(trim($_POST['mdp'])); ?>" required="">
+ 
+		<input  placeholder="Mot de Passe" type="password" class="form-control" name="mdp" value="<?php if (isset($_POST['mdp'])) echo htmlentities(trim($_POST['mdp'])); ?>" required="">
 		
 		</br></br></br>
-
-		<label for="pass_confirm">Confirmation du Mot de passe :</label> 
-		<input type="password" class="form-control" name="pass_confirm" value="<?php if (isset($_POST['pass_confirm'])) echo htmlentities(trim($_POST['pass_confirm'])); ?>" required="">
+ 
+		<input placeholder="Confirmation du mot de passe" type="password" class="form-control" name="pass_confirm" value="<?php if (isset($_POST['pass_confirm'])) echo htmlentities(trim($_POST['pass_confirm'])); ?>" required="">
 
 		</div>
 
 		</br>
 
 
-		<input type="submit" name="inscription" value="Inscription">
+		<input class="container-fluid col-md-3 col-md-offset-4" type="submit" name="inscription" value="S'inscrire">
 
 		</form>
 
