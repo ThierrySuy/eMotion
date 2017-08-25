@@ -23,7 +23,7 @@ if($_POST && isset($_POST['Submit'])){
     $result = $stmt->execute(array($_POST['Submit']);
 
     echo $result->rowCount() ? 'Data saved in db' : 'Unknown error occured'; 
-
+echo "test"
 }
 
 ?>
