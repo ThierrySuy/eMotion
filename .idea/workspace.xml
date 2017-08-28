@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d19cc7ca-1b41-4545-bcf3-06050c152f25" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deconnexion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/validate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajout_loc.php" afterPath="$PROJECT_DIR$/ajout_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connexion.php" afterPath="$PROJECT_DIR$/connexion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recup_ajout_loc.php" afterPath="$PROJECT_DIR$/recup_ajout_loc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +23,8 @@
       <file leaf-file-name="ajout_loc.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ajout_loc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="72" />
+            <state relative-caret-position="323">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -272,12 +265,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503904838806</updated>
-      <workItem from="1503904841587" duration="3125000" />
+      <workItem from="1503904841587" duration="4065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3125000" />
+    <option name="totallyTimeSpent" value="4065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -425,8 +418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ajout_loc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="72" />
+        <state relative-caret-position="323">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding />
         </state>
       </provider>
