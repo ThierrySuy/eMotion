@@ -1,17 +1,13 @@
 <?php
-    session_start();
-    if (isset($_SESSION['connect']))//On vérifie que le variable existe.
-    {
-        $connect=$_SESSION['connect'];//On récupère la valeur de la variable de session.
-    }
-    else
-    {
-            $connect=0;//Si $_SESSION['connect'] n'existe pas, on donne la valeur "0".
-    }
+include 'header.php';
 
-    if ($connect == "1") // Si le visiteur s'est identifié.
-    {
-    // On affiche la page cachée.
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id = $_SESSION['id'];
+    //var_dump($_SESSION);
+} else {
+    header('Location:index.php');
+}
 ?>
     <?php
     	try
@@ -28,14 +24,4 @@
             exit();
         }
    ?>
-        </div>
 
-</body>
-</html>
-<?php
-}
-else
-{
-   header('Location: index.php');//dans le cas ou l'uilisateur n'est pas connecté on redirige vers la page de connexion
-   exit();
-}

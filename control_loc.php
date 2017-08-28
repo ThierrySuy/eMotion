@@ -1,20 +1,20 @@
 <?php
-session_start();
-if (isset($_SESSION['connect'])) {//On vérifie que le variable existe.
-    $connect = $_SESSION['connect']; //On récupère la valeur de la variable de session.
+include 'header.php';
+
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id = $_SESSION['id'];
+    //var_dump($_SESSION);
 } else {
-    $connect = 0; //Si $_SESSION['connect'] n'existe pas, on donne la valeur "0".
+    header('Location:index.php');
 }
-if ($connect == "1") { // Si le visiteur s'est identifié.
-// On affiche la page cachée.
-    ?>
+?>
     <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
         <title>Contrôle de Location</title>
     </head>
     <body>
-        <?php include 'header.php'; ?>
         <div class="container">
             <div class="row">
                 <div class="box">
@@ -34,15 +34,12 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
                                 </div>
                                 <thead>
                                     <tr>
-                                        <th>Nom location</th>
+                                        <th>ID location</th>
                                         <th>ID client</th>
-                                        <th>Nom client</th>
-                                        <th>ID véhicule</th>
-                                        <th>Numéro de série</th>
-                                        <th>Plaque d'immatriculation</th>
-                                        <th>Adresse client</th>
-                                        <th>Date début de réservation</th>
-                                        <th>Date fin de réservation</th>
+                                        <th>Numéro de série du véhicule</th>
+                                        <th>Date de début de la location</th>
+                                        <th>Date de fin de la location</th>
+                                        <th>Durée de la location</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -63,15 +60,12 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
                                             ?>
                                             <!-- Ajout des lignes présentes dans la Base De Données -->
                                         <tr>
-                                            <td><?php echo $ligne['nom_loc']; ?></td>
-                                            <td><?php echo $ligne['id_client']; ?></td>
-                                            <td><?php echo $ligne['nom_client']; ?></td>
-                                            <td><?php echo $ligne['id_vehicule']; ?></td>
-                                            <td><?php echo $ligne['numeroserie']; ?></td>
-                                            <td><?php echo $ligne['plaque']; ?></td>
-                                            <td><?php echo $ligne['adresse_client']; ?></td>
+                                            <td><?php echo $ligne['id_location']; ?></td>
+                                            <td><?php echo $ligne['id_user']; ?></td>
+                                            <td><?php echo $ligne['numero_serie']; ?></td>
                                             <td><?php echo $ligne['date_debut']; ?></td>
                                             <td><?php echo $ligne['date_fin']; ?></td>
+                                            <td><?php echo $ligne['duree_jour']; ?></td>
                                             <td><a href="supp_loc.php?id=<?php echo $ligne['id_location']; ?>">
                                                     <img src="images/supprimer.png" alt="">
                                                 </a>&nbsp;&nbsp;
@@ -95,11 +89,4 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
         <?php include 'footer.php'; ?>
     </body>
     </html>
-    <!-- Si pas connecté en admin, impossible d'accéder à la page -->
-    <?php
-} else {
-    header('Location: index.php');
-    exit();
-}
-?>
 
