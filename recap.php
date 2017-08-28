@@ -81,7 +81,7 @@
                             ?>
 
                         <form name="validate" action="./recap.php" method="post">
-                         <input type="submit" name="Submit" id="'$username'" value="Login"> 
+                         <input type="submit" name="Submit" id="'$vehicule'" value="Valider"> 
                         </form>
                         
                         <?php
@@ -89,11 +89,29 @@
 
                         else {
 
-                        $username = $_POST["username"];
+                        $vehicule = $_POST["id"];
 
-                        $username = mysqli_real_escape_string($base, $username);
+                        $car = mysqli_query($base, "SELECT * FROM vehicule WHERE numero_serie = '".$vehicule."'");
 
-                        $result = mysqli_query("INSERT INTO `location` (`id_location`, `nom_loc`, `id_client`, `nom_client`, `id_vehicule`, `numeroserie`, `plaque`, `adresse_client`, `date_debut`, `date_fin`) VALUES (NULL, '$nom_loc', '$id_client', '$nom_client', '$id_vehicule', '$numeroserie', '$plaque', '$adresse_client', '$date_debut', '$date_fin')") or die(mysqli_error());
+                        $car2 = mysqli_fetch_assoc($car);
+
+                        $id_user = $_SESSION["id"];
+
+                        $numero_serie = $car2["numero_serie"];
+
+                        $date_debut = $car2["date_debut"];
+
+                        $date_fin = $car2["date_fin"];
+
+
+
+                       /* $select = SELECT * FROM vehicule WHERE vehicule = $_POST["$vehicule"]; */
+
+
+
+                        $result = mysqli_query("INSERT INTO `location` (`id_location`, `id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (NULL, ".$id_user.", ".$numero_serie.", ".$date_debut.", ".$date_fin.", ".$etat_location.", ".$duree_jour."');") or die(mysqli_error());
+
+
 
                         echo 'Values inserted'; 
                         

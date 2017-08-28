@@ -33,7 +33,7 @@ session_start();
           echo '<li style="margin-right:auto;"><a href="control_loc.php">Gérer les locations</a></li>';
       }
       echo "
-              <li><a href='mes-reservations.php'>Mes réservations</a></li>
+              <li><a href='recap.php'>Mes réservations</a></li>
               <li><a href='account.php'>Mon compte</a></li>";
               echo    "
       </li>
