@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<?php 
+include('/header.php'); 
+  if (isset($_SESSION['Auth']['role'])) {
+      $role = $_SESSION['Auth']['role'];
+  }
+?>
 
 <!DOCTYPE html>
-<html>
-    <?php include('/header.php'); ?>
+<html>    
     <head>
 
         <title>Recherche</title>
