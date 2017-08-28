@@ -51,7 +51,7 @@
     </head>
 
     <header>
-        <span> <img src="http://glennsmith.me" alt="Emotion" style="width:75px; height:50px;"></img></span>
+        <span> <img src="images/logo-color.png" alt="Emotion" style="width:75px; height:50px;"></img></span>
         <button class="hamburger">&#9776;</button>
         <button class="cross">&#735;</button>
     </header>
