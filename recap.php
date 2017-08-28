@@ -72,13 +72,42 @@
 
                          <a href="./cb.php"><button type="button" class="btn btn-success">Confirmer <span class="glyphicon glyphicon-play"></span></a> -->
 
-                        <form action="./cb.php" method="post">
-                         <input name="Submit" type="submit">
-                        </form>
+                        <?php 
 
+                      $base = mysqli_connect('localhost', 'root', '','emotion');
+                      
+                    if(empty($_POST)){
+                        ?>
+
+
+                        <form name="validate" action="./recap.php" method="post">
+                         <input name="Submit" type="submit">
+                         <input type="submit" name="Submit" id="'$username'" value="Login"> 
+                        </form>
+                        
+
+
+                        <?php
+}
+else{
+    $username = $_POST['username'];
+
+    $username = mysqli_real_escape_string($username);
+
+    $result = mysqli_query("INSERT INTO `location` (`id_location`, `nom_loc`, `id_client`, `nom_client`, `id_vehicule`, `numeroserie`, `plaque`, `adresse_client`, `date_debut`, `date_fin`) VALUES (NULL, '$nom_loc', '$id_client', '$nom_client', '$id_vehicule', '$numeroserie', '$plaque', '$adresse_client', '$date_debut', '$date_fin')") or die(mysqli_error());
+
+    
+
+    echo 'Username inserted'; 
+} 
+?>
+
+                       
                         </button>
 
+
                         </td> 
+
 
                       
 
@@ -91,4 +120,5 @@
 </div>
 
 <?php include('/footer.php'); ?>
+
 </html>
