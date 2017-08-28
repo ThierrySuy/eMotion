@@ -37,7 +37,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
     }
     ?>
     <meta charset="utf-8">
-    <title>Modification Véhicule de Location</title>
+    <title>Modification de votre profil</title>
 </head>
 <body>
 
@@ -127,12 +127,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                         <button id="buton" name="bouton" class="btn btn-success" value="Submit">Valider</button>
                                         <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
                                         <button type="reset" class="btn btn-danger" value="Annuler">Annuler</button>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="buton"></label>
-                                    <div class="col-md-8">
-                                        <a href="control_vehicule.php"><img src="images/retour.png" alt=""></a>
                                     </div>
                                 </div>
                             </fieldset>
