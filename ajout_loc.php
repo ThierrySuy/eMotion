@@ -15,7 +15,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role']==4)) {
         <title>Ajout Location</title>
     </head>
     <body>
-        <div class="brand">Ajout de Location</div>
         <div class="container">
             <div class="row">
                 <div class="box">

@@ -1,15 +1,19 @@
-<!DOCTYPE html>
+<?php 
+include('/header.php'); 
+  if (isset($_SESSION['Auth']['role'])) {
+      $role = $_SESSION['Auth']['role'];
+  }
+?>
 
 <!DOCTYPE html>
-<html>
-    <?php include('/header.php'); ?>
+<html>    
     <head>
 
         <title>Recherche</title>
 
      
         <?php
-        $base = mysqli_connect('localhost', 'root', 'root', 'emotion');
+        $base = mysqli_connect('localhost', 'root', '','emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
             $ville = mysqli_real_escape_string($_POST["ville"]);
             $type = mysqli_real_escape_string($_POST["type"]);

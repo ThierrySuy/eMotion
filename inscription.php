@@ -1,7 +1,24 @@
+
 <html>
+
 	<head>
 		<title>Inscription</title>
+
+
+		<link rel="stylesheet" href="emoji.css"> 
+        <link rel="stylesheet" href="jquery-ui.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="external/jquery/jquery.js"></script>
+        <script src="jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        
 	</head>
+
+
 
 	<body>
 		Inscription sur la plateforme:
@@ -25,7 +42,13 @@
 
 		</br></br>
 		
-		<input placeholder="Date de Naissance" type="Date" class="form-control" name="date_naissance" value="<?php if (isset($_POST['date_naissance'])) echo htmlentities(trim($_POST['date_naissance'])); ?>" required="">
+		<input placeholder="Adresse Postale" type="text" class="form-control" name="adresse" value="<?php if (isset($_POST['adresse'])) echo htmlentities(trim($_POST['adresse'])); ?>" required="">
+
+		</br></br>
+
+
+		<input placeholder="Code Postal" type="text" class="form-control" name="code_postal" value="<?php if (isset($_POST['code_postal'])) echo htmlentities(trim($_POST['code_postal'])); ?>" required="">
+		
 		
 		</div>
 
@@ -37,15 +60,11 @@
 
 		<input placeholder="Telephone" type="number" class="form-control" name="telephone" value="<?php if (isset($_POST['telephone'])) echo htmlentities(trim($_POST['telephone'])); ?>" required="">
 
-		</br></div>
-		
+		</br></br>
 
-	<div class="container-fluid col-md-8 col-md-offset-6"></br>
+		<input placeholder="Ville" type="text" class="form-control" name="ville" value="<?php if (isset($_POST['ville'])) echo htmlentities(trim($_POST['ville'])); ?>" required="">
 
-		<input placeholder="Adresse Postale" type="text" class="form-control" name="adresse" value="<?php if (isset($_POST['adresse'])) echo htmlentities(trim($_POST['adresse'])); ?>" required="">
-	
-
-		</div></br>
+		</div>
 
 		<div class="col-md-12"></div>
 	
@@ -54,7 +73,7 @@
 
 		<input placeholder="N° Permis" type="text" class="form-control" name="numero_permis" value="<?php if (isset($_POST['numero_permis'])) echo htmlentities(trim($_POST['numero_permis'])); ?>" required=""></br>
 		
-		</br></br>
+		</br>
 
 		
 		<input  placeholder="E-mail" type="text" class="form-control" name="mail" value="<?php if (isset($_POST['mail'])) echo htmlentities(trim($_POST['mail'])); ?>" required="">
@@ -63,11 +82,12 @@
 
 	<div class="container-fluid col-md-6 col-md-offset-1"></br>
  
-		<input  placeholder="Mot de Passe" type="password" class="form-control" name="mdp" value="<?php if (isset($_POST['mdp'])) echo htmlentities(trim($_POST['mdp'])); ?>" required="">
+		<input  placeholder="Mot de Passe" type="password" class="form-control" name="pass" value="<?php if (isset($_POST['pass'])) echo htmlentities(trim($_POST['pass'])); ?>" required="">
 		
-		</br></br></br>
+		</br></br>
  
 		<input placeholder="Confirmation du mot de passe" type="password" class="form-control" name="pass_confirm" value="<?php if (isset($_POST['pass_confirm'])) echo htmlentities(trim($_POST['pass_confirm'])); ?>" required="">
+
 
 		</div>
 
@@ -87,5 +107,8 @@ if (isset($erreur)) echo '<br />',$erreur;
 
 ?>
 
+
+
 </body>
+
 </html>
