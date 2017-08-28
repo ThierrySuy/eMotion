@@ -1,5 +1,8 @@
 <!Doctype html>
 <html>
+<?php
+session_start();
+?>
   <head>
         
         <link rel="stylesheet" href="emoji.css"> 

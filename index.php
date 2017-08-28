@@ -2,7 +2,14 @@
 <html>
     <title>Index</title>
 
-  <?php include('/header.php'); ?>
+  <?php
+  include('/header.php');
+//var_dump($_SESSION);
+
+  if (isset($_SESSION['Auth']['role'])) {
+      $role = $_SESSION['Auth']['role'];
+  }
+  ?>
 
 
     <body>

@@ -1,12 +1,13 @@
 <?php
-session_start();
-if (isset($_SESSION['connect'])) {//On vérifie que le variable existe.
-    $connect = $_SESSION['connect']; //On récupère la valeur de la variable de session.
-} else {
-    $connect = 0; //Si $_SESSION['connect'] n'existe pas, on donne la valeur "0".
+include 'header.php';
+
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role']==2 || $_SESSION['Auth']['role']==4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id   = $_SESSION['id'];
+    var_dump($_SESSION);
+}else{
+    header('Location:index.php');
 }
-if ($connect == "1") { // Si le visiteur s'est identifié.
-// On affiche la page cachée.
     ?>
     <!DOCTYPE html>
     <head>
@@ -14,7 +15,6 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
         <title>Ajout Location</title>
     </head>
     <body>
-        <?php include 'header.php'; ?>
         <div class="brand">Ajout de Location</div>
         <div class="container">
             <div class="row">
@@ -119,9 +119,3 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
         <?php include 'footer.php'; ?>
     </body>
     </html>
-    <?php
-} else {
-    header('Location: index.php');
-    exit();
-}
-?>

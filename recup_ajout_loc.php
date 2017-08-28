@@ -1,20 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['connect'])) {//On vérifie que le variable existe.
-    $connect = $_SESSION['connect']; //On récupère la valeur de la variable de session.
-} else {
-    $connect = 0; //Si $_SESSION['connect'] n'existe pas, on donne la valeur "0".
-}
-if ($connect == "1") { // Si le visiteur s'est identifié.
-// On affiche la page cachée.
-    ?>
-    <!DOCTYPE html>
-    <html dir="ltr">
-        <head>
-            <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-            <meta name="viewport" content="initial-scale=1.0">
-        </head>
-        <body>
             <!-- Connexion à la Base De Données -->
             <?php
             try {
@@ -38,11 +21,3 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
             header('Location: control_loc.php'); //on fait une redirection vers la page d'ajout
             exit(); //on quitte cette page
             ?>
-        </div>
-    </body>
-    </html>
-    <?php
-} else {
-    header('Location: index.php'); // si l'utilisateur n'est pas connecter on renvoi vers la page de connexion
-    exit();
-}
