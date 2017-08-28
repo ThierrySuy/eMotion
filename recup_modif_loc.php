@@ -1,4 +1,3 @@
-
 <?php
 
 try {
@@ -10,7 +9,7 @@ try {
     $date_fin = $_POST['date_fin'];
     $etat_location = $_POST['etat_location'];
     $duree_jour = $_POST['duree_jour'];
-    
+
     $bdd = new PDO('mysql:host=localhost;dbname=emotion', 'root', '');
     $bdd->exec("UPDATE location SET id_location = '$id_location', id_user = '$id_user' , numero_serie = '$numero_serie',date_debut = '$date_debut' ,date_fin = '$date_fin' ,etat_location = '$etat_location' ,duree_jour = '$duree_jour' WHERE id_location = '$id_location'");
     $lien = 'Location: modif_loc.php?id=' . $id_location;

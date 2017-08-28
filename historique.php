@@ -1,20 +1,20 @@
 <?php
-session_start();
-if (isset($_SESSION['connect'])) {//On vérifie que le variable existe.
-    $connect = $_SESSION['connect']; //On récupère la valeur de la variable de session.
+include 'header.php';
+
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id = $_SESSION['id'];
+    //var_dump($_SESSION);
 } else {
-    $connect = 0; //Si $_SESSION['connect'] n'existe pas, on donne la valeur "0".
+    header('Location:index.php');
 }
-if ($connect == "1") { // Si le visiteur s'est identifié.
-// On affiche la page cachée.
-    ?>
+?>
     <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
         <title>Historique de Location</title>
     </head>
     <body>
-        <?php include 'header.php'; ?>
         <div class="container">
             <div class="row">
                 <div class="box">
@@ -98,11 +98,3 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
         <?php include 'footer.php'; ?>
     </body>
     </html>
-    <!-- Si pas connecté en admin, impossible d'accéder à la page -->
-    <?php
-} else {
-    header('Location: index.php');
-    exit();
-}
-?>
-

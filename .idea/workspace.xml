@@ -4,23 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/index.php" description="var_dump($_SESSION);" line="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d19cc7ca-1b41-4545-bcf3-06050c152f25" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajout_loc.php" afterPath="$PROJECT_DIR$/ajout_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajout_vehicule.php" afterPath="$PROJECT_DIR$/ajout_vehicule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_loc.php" afterPath="$PROJECT_DIR$/control_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_vehicule.php" afterPath="$PROJECT_DIR$/control_vehicule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modif_loc.php" afterPath="$PROJECT_DIR$/modif_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modif_vehicule.php" afterPath="$PROJECT_DIR$/modif_vehicule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recup_ajout.php" afterPath="$PROJECT_DIR$/recup_ajout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recup_ajout_loc.php" afterPath="$PROJECT_DIR$/recup_ajout_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recup_modif.php" afterPath="$PROJECT_DIR$/recup_modif.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recup_modif_loc.php" afterPath="$PROJECT_DIR$/recup_modif_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/supp_loc.php" afterPath="$PROJECT_DIR$/supp_loc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/supp_vehicule.php" afterPath="$PROJECT_DIR$/supp_vehicule.php" />
-    </list>
+    <list default="true" id="d19cc7ca-1b41-4545-bcf3-06050c152f25" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,102 +18,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ajout_loc.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ajout_loc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajout_vehicule.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajout_vehicule.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
-              <folding>
-                <element signature="e#7968#7974#1#HTML" expanded="true" />
-                <element signature="e#7987#7993#1#HTML" expanded="true" />
-                <element signature="e#8006#8012#1#HTML" expanded="true" />
-                <element signature="e#8025#8031#1#HTML" expanded="true" />
-                <element signature="e#8044#8050#1#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recup_ajout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recup_ajout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logout.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recup_ajout_loc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recup_ajout_loc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-              <folding>
-                <marker date="1503910459026" expanded="true" signature="1313:1331" ph="..." />
-                <marker date="1503910459026" expanded="true" signature="1432:1450" ph="..." />
-                <marker date="1503910459026" expanded="true" signature="1526:1655" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <marker date="1503916156862" expanded="true" signature="150:194" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="212:2365" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="240:2091" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="329:2076" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="361:1152" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="431:740" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="465:731" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="499:725" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="564:724" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="744:861" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="786:852" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="865:1147" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="889:1138" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="954:1130" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="1283:2046" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="1444:2018" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
-                <marker date="1503916156862" expanded="true" signature="1824:1984" ph="{...}" />
-                <marker date="1503916156862" expanded="true" signature="2112:2156" ph="..." />
-                <marker date="1503916156862" expanded="true" signature="2410:2452" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validate.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="validate.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/validate.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -152,16 +46,6 @@
               <folding>
                 <marker date="1503907300000" expanded="true" signature="510:564" ph="SELECT * FRO... user" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="control_vehicule.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control_vehicule.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -305,12 +189,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503904838806</updated>
-      <workItem from="1503904841587" duration="8996000" />
+      <workItem from="1503904841587" duration="9614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8996000" />
+    <option name="totallyTimeSpent" value="9614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -383,32 +267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding>
-            <marker date="1503907300000" expanded="true" signature="510:564" ph="SELECT * FRO... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control_vehicule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recherche.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -448,14 +306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -468,18 +318,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recup_ajout_loc.php">
+    <entry file="file://$PROJECT_DIR$/ajout_loc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recup_ajout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -498,11 +340,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajout_loc.php">
+    <entry file="file://$PROJECT_DIR$/recup_ajout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="342">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1503914096470" expanded="true" signature="689:1027" ph="INSERT INTO vehicule... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recup_ajout_loc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <marker date="1503921077427" expanded="true" signature="522:718" ph="INSERT INTO location... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control_vehicule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#4296#4302#0#HTML" expanded="true" />
+            <element signature="e#4302#4308#0#HTML" expanded="true" />
+            <marker date="1503916185971" expanded="true" signature="2860:2882" ph="SELECT * FRO... vehicule" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding>
+            <marker date="1503907300000" expanded="true" signature="510:564" ph="SELECT * FRO... user" />
+          </folding>
         </state>
       </provider>
     </entry>
