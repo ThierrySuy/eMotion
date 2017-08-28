@@ -11,8 +11,8 @@
         <?php
         $base = mysqli_connect('localhost', 'root', 'root', 'emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
-            $ville = $_POST["ville"];
-            $type = $_POST["type"];
+            $ville = mysqli_real_escape_string($_POST["ville"]);
+            $type = mysqli_real_escape_string($_POST["type"]);
            
             $lesimages = "";
 
@@ -23,7 +23,7 @@
             $lesimages .= "SELECT * FROM vehicule v,type_vehicule t WHERE v.id_type_vehicule = t.id_type_vehicule AND v.ville =  '". $ville ."'  AND v.id_type_vehicule = '" . $type."'";
             
              if (isset($_POST['couleur'])){
-                  $couleur = $_POST["couleur"];
+                  $couleur = mysqli_real_escape_string($_POST["couleur"]);
                  $lesimages .= "AND v.couleur = '".$couleur."'";
                  }
              elseif(isset ($_POST['model'])){
@@ -108,7 +108,10 @@
                         <input name ="id" type="hidden" value="<?php echo $img["numero_serie"] ;?>">
                         <div class="panel-heading"><h4><span class="label label-primary"><?php echo $img["marque"]."-".$img["modele"]; ?></span></h4></div> 
                         <div class="panel-body"> <img src="voiture.png" class="col-md-12" alt="Hé Hé"> </div>
-                    <div class="panel-footer">  <input class="btn btn-info"  type="submit"  value="Submit"/> </div>
+                    <div class="panel-footer">
+                        <h4><span class="label label-success"><?php echo $img["prix"]."€ /J"; ?></span></h4>
+                        <input class="btn btn-info"  type="submit"  value="Submit"/> 
+                    </div>
                   
                     </div>
                     </form>
