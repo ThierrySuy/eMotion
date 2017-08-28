@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -46,13 +45,5 @@
 
     </div>
 </div>
-
-
-
-
-        
-
-
-=======
 
 </html>

@@ -42,11 +42,11 @@ session_start();
               }
               echo    "
       </li>
-      <li><a href='nous-contacter.php'>Nous Contacter</a></li>
+      <li><a href='contact.php'>Nous Contacter</a></li>
       <li><a href='logout.php'>Déconnexion</a></li>";
       }else{
       echo '<li><a href="connexion.php">Me connecter</a></li>
-      <li><a href="nous-contacter.php">Nous Contacter</a></li>';
+      <li><a href="contact.php">Nous Contacter</a></li>';
       }?>
     <a href="./recap.php"><li>Votre récapitulatif</li></a>
     <a href="./recherche.php"><li>Votre recherche</li></a>

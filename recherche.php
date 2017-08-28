@@ -9,7 +9,7 @@
 
      
         <?php
-        $base = mysqli_connect('localhost', 'root', 'root', 'emotion');
+        $base = mysqli_connect('localhost', 'root', '','emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
             $ville = $_POST["ville"];
             $type = $_POST["type"];

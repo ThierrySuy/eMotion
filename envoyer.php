@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 $destinataire = 'suy.thierry21@gmail.com';
@@ -20,7 +20,5 @@ else // Non envoyé
 {
     echo "Votre message n'a pas pu être envoyé";
 }
- 
-=======
 
 ?>

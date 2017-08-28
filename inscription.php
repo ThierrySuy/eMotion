@@ -1,7 +1,12 @@
+<?php include('/header.php'); ?>
+
 <html>
+
 	<head>
 		<title>Inscription</title>
 	</head>
+
+
 
 	<body>
 		Inscription sur la plateforme:
@@ -87,5 +92,8 @@ if (isset($erreur)) echo '<br />',$erreur;
 
 ?>
 
+
+
 </body>
+
 </html>
