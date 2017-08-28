@@ -88,7 +88,6 @@
                                 }
 
                         else {
-
                         $vehicule = $_POST["id"];
 
                         $car = mysqli_query($base, "SELECT * FROM vehicule WHERE numero_serie = '".$vehicule."'");
@@ -110,6 +109,9 @@
 
 
                         $result = mysqli_query("INSERT INTO `location` (`id_location`, `id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (NULL, ".$id_user.", ".$numero_serie.", ".$date_debut.", ".$date_fin.", ".$etat_location.", ".$duree_jour."');") or die(mysqli_error());
+
+                        $username =  securite_bdd($_POST["username"]);
+
 
 
 
