@@ -27,6 +27,27 @@ session_start();
 
 <div class="menu">
   <ul>
+      <?php if (!empty($_SESSION['Auth'])) {
+      if ($_SESSION['Auth']['role']==4) {
+      echo '<li style="margin-right:auto;"><a href="ajout_vehicule.php">Ajouter un véhicule de location</a></li>';
+          echo '<li style="margin-right:auto;"><a href="ajout_loc.php">Créer une location</a></li>';
+      }
+      echo "
+              <li><a href='mes-reservations.php'>Mes réservations</a></li>
+              <li><a href='account.php'>Mon compte</a></li>";
+              if ($_SESSION['Auth']['role']==2) {
+
+              $point_fidelite =	pointFidelite();
+              echo   "<p> <span>$point_fidelite</span> points de fidélité</p>";
+              }
+              echo    "
+      </li>
+      <li><a href='nous-contacter.php'>Nous Contacter</a></li>
+      <li><a href='logout.php'>Déconnexion</a></li>";
+      }else{
+      echo '<li><a href="connexion.php">Me connecter</a></li>
+      <li><a href="nous-contacter.php">Nous Contacter</a></li>';
+      }?>
     <a href="./recap.php"><li>Votre récapitulatif</li></a>
     <a href="./recherche.php"><li>Votre recherche</li></a>
     <a href="#"><li>Votre profil</li></a>

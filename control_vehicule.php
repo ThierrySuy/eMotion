@@ -1,20 +1,20 @@
 <?php
-session_start();
-if (isset($_SESSION['connect'])) {//On vérifie que le variable existe.
-    $connect = $_SESSION['connect']; //On récupère la valeur de la variable de session.
+include 'header.php';
+
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id = $_SESSION['id'];
+    //var_dump($_SESSION);
 } else {
-    $connect = 0; //Si $_SESSION['connect'] n'existe pas, on donne la valeur "0".
+    header('Location:index.php');
 }
-if ($connect == "1") { // Si le visiteur s'est identifié.
-// On affiche la page cachée.
-    ?>
+?>
     <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
         <title>Contrôle Véhicule de Location</title>
     </head>
     <body>
-        <?php include 'header.php'; ?>
         <div class="container">
             <div class="row">
                 <div class="box">
@@ -34,20 +34,16 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
                                 </div>
                                 <thead>
                                     <tr>
+                                        <th>Numéro de série</th>
                                         <th>Marque</th>
-                                        <th>Modele</th>
-                                        <th>Numero de série</th>
+                                        <th>Modèle</th>
                                         <th>Couleur</th>
                                         <th>Plaque d'immatriculation</th>
-                                        <th>Nombre de kilomètre</th>
+                                        <th>Prix</th>
+                                        <th>Année</th>
                                         <th>Date d'achat</th>
                                         <th>Prix d'achat</th>
-                                        <th>Nombre de passager</th>
-                                        <th>Autonomie</th>
-                                        <th>Ville</th>
-                                        <th>Type de véhicule</th>
-                                        <th>Description</th>
-                                        <th>Disponibilité</th>
+                                        <th>Kilomètres</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -68,25 +64,20 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
                                             ?>
                                             <!-- Ajout des lignes présentes dans la Base De Données -->
                                         <tr>
+                                            <td><?php echo $ligne['numero_serie']; ?></td>
                                             <td><?php echo $ligne['marque']; ?></td>
                                             <td><?php echo $ligne['modele']; ?></td>
-                                            <td><?php echo $ligne['numeroserie']; ?></td>
                                             <td><?php echo $ligne['couleur']; ?></td>
-                                            <td><?php echo $ligne['plaque']; ?></td>
-                                            <td><?php echo $ligne['nombre_km']; ?></td>
+                                            <td><?php echo $ligne['immatriculation']; ?></td>
+                                            <td><?php echo $ligne['prix']; ?></td>
+                                            <td><?php echo $ligne['annee']; ?></td>
                                             <td><?php echo $ligne['date_achat']; ?></td>
                                             <td><?php echo $ligne['prix_achat']; ?></td>
-                                            <td><?php echo $ligne['nombre_passager']; ?></td>
-                                            <td><?php echo $ligne['autonomie']; ?></td>
-                                            <td><?php echo $ligne['ville']; ?></td>
-        <!--                                <td><?php echo $ligne['img']; ?></td></td>-->
-                                            <td><?php echo $ligne['type_vehicule']; ?></td>
-                                            <td><?php echo $ligne['description']; ?></td>
-                                            <td><?php echo $ligne['disponibilite']; ?></td>
-                                            <td><a href="supp_vehicule.php?id=<?php echo $ligne['id_vehicule']; ?>">
+                                            <td><?php echo $ligne['kilometres']; ?></td>
+                                            <td><a href="supp_vehicule.php?id=<?php echo $ligne['numero_serie']; ?>">
                                                     <img src="images/supprimer.png" alt="">
                                                 </a>&nbsp;&nbsp;
-                                                <a href="modif_vehicule.php?id=<?php echo $ligne['id_vehicule']; ?>">
+                                                <a href="modif_vehicule.php?id=<?php echo $ligne['numero_serie']; ?>">
                                                     <img src="images/modifier.png" alt="">
                                                 </a></td>
                                         </tr>
@@ -106,11 +97,3 @@ if ($connect == "1") { // Si le visiteur s'est identifié.
         <?php include 'footer.php'; ?>
     </body>
     </html>
-    <!-- Si pas connecté en admin, impossible d'accéder à la page -->
-    <?php
-} else {
-    header('Location: index.php');
-    exit();
-}
-?>
-

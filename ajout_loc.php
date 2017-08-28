@@ -1,10 +1,10 @@
 <?php
 include 'header.php';
 
-if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role']==2 || $_SESSION['Auth']['role']==4)) {
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role']==4)) {
     $role = $_SESSION['Auth']['role'];
     $id   = $_SESSION['id'];
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
 }else{
     header('Location:index.php');
 }
@@ -32,51 +32,16 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role']==2 || $_SESSI
                                 <fieldset>
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="nom_loc">Nom de la location *</label>
+                                        <label class="col-md-4 control-label" for="id_user">ID client de la location *</label>
                                         <div class="col-md-5">
-                                            <input id="nom_loc" name="nom_loc" type="text" placeholder="Nom de la location." class="form-control input-md" required="">
+                                            <input id="id_user" name="id_user" type="int" placeholder="ID client de la location." class="form-control input-md" required="">
                                         </div>
                                     </div>
                                     </br>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="id_client">ID du client de la location *</label>
+                                        <label class="col-md-4 control-label" for="numero_serie">Numéro de série du véhicule de la location *</label>
                                         <div class="col-md-5">
-                                            <input id="id_client" name="id_client" type="int" placeholder="ID du client de la location." class="form-control input-md" required="">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="nom_client">Nom du client de la location *</label>
-                                        <div class="col-md-5">
-                                            <input id="nom_client" name="nom_client" type="text" placeholder="Nom du client de la location." class="form-control input-md" required="">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="id_vehicule">ID du véhicule de la location *</label>
-                                        <div class="col-md-5">
-                                            <input id="id_vehicule" name="id_vehicule" type="int" placeholder="ID du véhicule de la location." class="form-control input-md" required="">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="numeroserie">Numéro de série du véhicule de la location *</label>
-                                        <div class="col-md-5">
-                                            <input id="numeroserie" name="numeroserie" type="text" placeholder="Numéro de série du véhicule de la location." class="form-control input-md" required="">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="plaque">Plaque d'immatriculation du véhicule de la location *</label>
-                                        <div class="col-md-5">
-                                            <input id="plaque" name="plaque" type="text" placeholder="Plaque d'immatriculation du véhicule de la location." class="form-control input-md" required="">
-                                        </div>
-                                    </div>
-                                    </br>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="adresse_client">Adresse du client de la location *</label>
-                                        <div class="col-md-5">
-                                            <input id="adresse_client" name="adresse_client" type="text" placeholder="Adresse du client de la location." class="form-control input-md" required="">
+                                            <input id="numero_serie" name="numero_serie" type="varchar" placeholder="Numéro de série du véhicule de la location." class="form-control input-md" required="">
                                         </div>
                                     </div>
                                     </br>
@@ -91,6 +56,20 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role']==2 || $_SESSI
                                         <label class="col-md-4 control-label" for="date_fin">Date fin de la location *</label>
                                         <div class="col-md-5">
                                             <input id="date_fin" name="date_fin" type="date" placeholder="Date fin de la location." class="form-control input-md" required="">
+                                        </div>
+                                    </div>
+                                    </br>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="etat_location">État de la location *</label>
+                                        <div class="col-md-5">
+                                            <input id="etat_location" name="etat_location" type="int" placeholder="Obligatoirement à 1 car location en cours." class="form-control input-md" required="">
+                                        </div>
+                                    </div>
+                                    </br>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="duree_jour">Durée jour de la location *</label>
+                                        <div class="col-md-5">
+                                            <input id="duree_jour" name="duree_jour" type="int" placeholder="Durée jour de la location." class="form-control input-md" required="">
                                         </div>
                                     </div>
                                     </br>
