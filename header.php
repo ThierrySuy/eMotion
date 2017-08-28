@@ -30,16 +30,11 @@ session_start();
       <?php if (!empty($_SESSION['Auth'])) {
       if ($_SESSION['Auth']['role']==4) {
       echo '<li style="margin-right:auto;"><a href="ajout_vehicule.php">Ajouter un véhicule de location</a></li>';
-          echo '<li style="margin-right:auto;"><a href="ajout_loc.php">Créer une location</a></li>';
+          echo '<li style="margin-right:auto;"><a href="control_loc.php">Gérer les locations</a></li>';
       }
       echo "
               <li><a href='mes-reservations.php'>Mes réservations</a></li>
               <li><a href='account.php'>Mon compte</a></li>";
-              if ($_SESSION['Auth']['role']==2) {
-
-              $point_fidelite =	pointFidelite();
-              echo   "<p> <span>$point_fidelite</span> points de fidélité</p>";
-              }
               echo    "
       </li>
       <li><a href='nous-contacter.php'>Nous Contacter</a></li>
