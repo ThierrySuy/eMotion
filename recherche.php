@@ -13,10 +13,10 @@ include('/header.php');
 
      
         <?php
-        $base = mysqli_connect('localhost', 'root', '','emotion');
+        $base = mysqli_connect('localhost', 'root', 'root','emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
-            $ville = mysqli_real_escape_string($_POST["ville"]);
-            $type = mysqli_real_escape_string($_POST["type"]);
+            $ville =  securite_bdd($_POST["ville"]);
+            $type =  securite_bdd($_POST["type"]);
            
             $lesimages = "";
 
@@ -27,7 +27,7 @@ include('/header.php');
             $lesimages .= "SELECT * FROM vehicule v,type_vehicule t WHERE v.id_type_vehicule = t.id_type_vehicule AND v.ville =  '". $ville ."'  AND v.id_type_vehicule = '" . $type."'";
             
              if (isset($_POST['couleur'])){
-                  $couleur = mysqli_real_escape_string($_POST["couleur"]);
+                  $couleur = securite_bdd($_POST["couleur"]);
                  $lesimages .= "AND v.couleur = '".$couleur."'";
                  }
              elseif(isset ($_POST['model'])){

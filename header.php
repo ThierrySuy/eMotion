@@ -2,6 +2,39 @@
 <html>
     <?php
     session_start();
+    
+     function securite_bdd($string)
+
+    {
+
+        // On regarde si le type de string est un nombre entier (int)
+
+        if(ctype_digit($string))
+
+        {
+
+            $string = intval($string);
+
+        }
+
+        // Pour tous les autres types
+
+        else
+
+        {
+            $base = mysqli_connect('localhost', 'root', 'root','emotion');
+
+            $string = mysqli_real_escape_string($base,$string);
+
+            $string = addcslashes($string, '%_');
+
+        }
+
+        
+
+        return $string;
+
+    }
     ?>
     <head>
 
@@ -30,11 +63,12 @@
             <?php
             if (!empty($_SESSION['Auth'])) {
                 if ($_SESSION['Auth']['role'] == 4) {
+                    $id = $_SESSION['id'];
                     echo '<li style="margin-right:auto;"><a href="control_vehicule.php">Gérer les véhicules de location</a></li>';
                     echo '<li style="margin-right:auto;"><a href="control_loc.php">Gérer les locations</a></li>';
                 }
                 echo "    
-          <li><a href='profil.php'>Mon compte</a></li>
+          <li><a href='profil.php?id=$id'>Mon compte</a></li>
           <li><a href='notre-philosophie.php'>Notre philosophie</a></li>
           <li><a href='recherche.php'>Louer un véhicule</a></li>
           <li><a href='carte-agence.php'>Carte des agences</a></li>

@@ -89,7 +89,7 @@
 
                         else {
 
-                        $username = $_POST["username"];
+                        $username =  securite_bdd($_POST["username"]);
 
                         $username = mysqli_real_escape_string($base, $username);
 
