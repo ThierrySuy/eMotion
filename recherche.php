@@ -2,11 +2,12 @@
 
 <!DOCTYPE html>
 <html>
+    <?php include('/header.php'); ?>
     <head>
 
         <title>Recherche</title>
 
-        <?php include('/header.php'); ?>
+     
         <?php
         $base = mysqli_connect('localhost', 'root', 'root', 'emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
@@ -19,7 +20,7 @@
 
             $sql = "SELECT * FROM vehicule ";
 
-            $lesimages .= "SELECT * FROM vehicule v,location l WHERE v.ville =  '". $ville ."'  AND v.type_vehicule = '" . $type."'";
+            $lesimages .= "SELECT * FROM vehicule v,type_vehicule t WHERE v.id_type_vehicule = t.id_type_vehicule AND v.ville =  '". $ville ."'  AND v.id_type_vehicule = '" . $type."'";
             
              if (isset($_POST['couleur'])){
                   $couleur = $_POST["couleur"];
@@ -29,11 +30,13 @@
                  $lesimages .= "AND v.model = '".$modele."'";
              }    
             // $lesimages .= ' AND l.date_debut =< '.$date_prise.' AND l.date_fin =>'.$date_rendu.' OR l.date_debut =< '.$date_rendu.' AND l.date_fin > l.date_debut';
-             
+          
                      
             $qimg = mysqli_query($base, $lesimages);
-            $img = mysqli_fetch_assoc($qimg);
-        
+            
+           
+         
+         
             mysqli_close($base);
 
           
@@ -53,32 +56,33 @@
                             <div class="form-group">
                                 <select class="form-control connard" name="ville">
                                     <option value="" disabled selected>Choisir une ville..</option>
-                                    <option value="paris">Paris</option>
-                                    <option value="lyon">Lyon</option>
-                                    <option value="lille">Lille</option>
+                                    <option value="1">Paris</option>
+                                    <option value="2">Lyon</option>
+                                    <option value="3">Marseille</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control connard" name="type">
                                     <option value="" disabled selected>Choisir un type..</option>
-                                    <option value="voiture">voiture</option>
-                                    <option value="scooter">scooter</option>
-                                    <option value="moto">moto</option>
+                                    <option value="1">scooter</option>
+                                    <option value="2">voiture</option>
+                                    <option value="3">moto</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control connard" name="couleur">
                                     <option value="" disabled selected>Choisir une couleur..</option>
                                     <option value="noir">Noir</option>
-                                    <option value="gris">Gris</option>
-                                    <option value="bleu">Bleu</option>
-                                    <option value="blanc">Blanc</option>
+                                    <option value="Gris">Gris</option>
+                                    <option value="Bleu">Bleu</option>
+                                    <option value="Blanc">Blanc</option>
+                                    <option value="Rouge">Rouge</option>
                                 </select>
                             </div>
                             <li>
                             </li>
                             <div class="form-group">
-                                <select class="form-control connard" name="model">
+                                <select class="form-control connard" name="modele">
                                     <option value="" disabled selected>model</option>
                                     <option value="coupe">coupé</option>
                                     <option value="break">break</option>
@@ -94,15 +98,21 @@
                 </nav>
  </div> 
             </form>
-                <div class="container-fluid col-md-offset-5 col-md-6">
+                <div class="container-fluid col-md-12">
                   
-                    <?php if(isset($img)){
-                    while ( $img  ){ echo $img['id_vehicule']; echo "</br>" ; ?>
-                    <img class="col-md-2" src="<?php echo $img["img"];?>" alt="Hé Hé">
-                    <input href="/recap.php?id=<?php echo $img["id_vehicule"] ;?>" type="button"  value="$imgs"/> 
-                    <input href="/recap.php" type="submit" name="rec" id="rec" value="selectionner"/> 
-                    
-                    <?php $img = mysqli_fetch_assoc($qimg) ; } }?>
+                    <?php if(isset($qimg)){
+                    while (($img = mysqli_fetch_assoc($qimg))!= NULL ){ 
+                        ?>
+                    <form action="recap.php" method="POST">
+                    <div class="col-md-offset-1 col-md-3 panel panel-default">
+                        <input name ="id" type="hidden" value="<?php echo $img["numero_serie"] ;?>">
+                        <div class="panel-heading"><h4><span class="label label-primary"><?php echo $img["marque"]."-".$img["modele"]; ?></span></h4></div> 
+                        <div class="panel-body"> <img src="voiture.png" class="col-md-12" alt="Hé Hé"> </div>
+                    <div class="panel-footer">  <input class="btn btn-info"  type="submit"  value="Submit"/> </div>
+                  
+                    </div>
+                    </form>
+                    <?php } }?>
                    
 
                 </div>
