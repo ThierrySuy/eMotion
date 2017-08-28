@@ -23,7 +23,8 @@
 
 			    mysqli_close($base);   
 
-			    echo "La table a bien été ajoutée!";
+			    header('Location: index.php');
+			    exit();
 
 			    /* ce fichier permet de récupérer les données via le formulaire d'inscription
 
