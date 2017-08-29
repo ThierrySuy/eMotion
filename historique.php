@@ -62,6 +62,8 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                     // echo $id_client = $_POST['id'];
                                     //$donnees = $bdd->query("SELECT * FROM location WHERE id_client = '$id'");
                                     while ($ligne = $donnees->fetch()) {
+
+                                        $id_loc = $ligne['id_location'];
                                         ?>
                                         <!-- Ajout des lignes présentes dans la Base De Données -->
                                     <tr>
@@ -76,9 +78,11 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                             <a href="modif_loc.php?id=<?php echo $ligne['id_location']; ?>">
                                                 <img src="images/modifier.png" alt="">
                                             </a></td>
-                                        <td><a href="facture.php" target="_blank">Obtenir la facture</a></td>
+                                        <td><a href="facture.php?loc=<?php echo $id_loc; ?>" target="_blank">Obtenir la facture</a></td>
                                     </tr>
-                                <?php } ?>
+                                <?php } 
+
+                                ?>
                             </tbody>
                         </table>
                     </div>

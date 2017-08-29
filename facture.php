@@ -1,8 +1,12 @@
 ﻿<?php
-
+session_start();
 require('invoice.php');
 
 header('Content-Type: text/html; charset=utf-8');
+
+
+$bdd = new PDO('mysql:host=localhost;dbname=emotion', 'root', '');
+$id_loc = $_GET['loc'];
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
@@ -11,6 +15,7 @@ $pdf->addSociete( "Emotion",
                   "75006 PARIS\n".
                   "Capital : 120.000 " . EURO );
 $pdf->fact_dev( "Devis","Temporaire" ); 
+$pdf->temporaire( "Emotion" );
 $pdf->addDate( "03/12/2003"); // Donnée dynamique
 $pdf->addClient("CL01"); // Donnée dynamique
 $pdf->addPageNumber("1");
@@ -31,25 +36,31 @@ $cols=array( "ID VEHICULE"    => "L",
              "NB JOUR"     => "C",
              "P.U. HT"      => "R",
              "MONTANT H.T." => "R",
-             "TVA"          => "C" );
+             "TVA"          => "C"  );
 $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
 $y    = 109;
 
+ $recup = $bdd->query("SELECT * FROM location WHERE id_location = '$id_loc'");
 
-if(isset($_POST['submit'])){
-// As output of $_POST['Color'] is an array we have to use foreach Loop to display individual value
-foreach ($_POST['Color'] as $select)
-{
-echo "You have selected :" .$select; // Displaying Selected Value
-}
-}
+   while ( $ligne = $recup->fetch()) {
+ 
+  $numero_serie = $ligne['numero_serie'];
 
+ } 
+
+ $donnees2 = $bdd->query("SELECT * FROM vehicule WHERE numero_serie = '$numero_serie'");
+// echo "SELECT * FROM vehicule WHERE numero_serie = '$numero_serie' AND id_user = '" . $_SESSION['id'] . "'";
+  while ($ligne2 = $donnees2->fetch()) {
+ 
+  $marque = $ligne2['marque'];
+   $modele = $ligne2['modele'];
+ } 
 
 $line = array( 
                "ID VEHICULE"    => "REF1", // Données dynamique
-               "VEHICULE"  => "Mercedes Classe C\n" , // Données dynamique
+               "VEHICULE"  => "$marque $modele\n" , // Données dynamique
                "NB JOUR"     => "1\n" , // Données dynamique
                "P.U. HT"      => "60.000", // Données dynamique
                "MONTANT H.T." => "60.000", // Données dynamique

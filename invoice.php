@@ -387,7 +387,7 @@ function lineVert( $tab )
 function addLine( $ligne, $tab )
 {
     global $colonnes, $format;
-
+$
     $ordonnee     = 10;
     $maxSize      = $ligne;
 
