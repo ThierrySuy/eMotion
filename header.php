@@ -1,6 +1,55 @@
 <!Doctype html>
-
 <html>
+    <?php
+    session_start();
+    
+     function securite_bdd($string)
+
+    {
+
+        // On regarde si le type de string est un nombre entier (int)
+
+        if(ctype_digit($string))
+
+        {
+
+            $string = intval($string);
+
+        }
+
+        // Pour tous les autres types
+
+        else
+
+        {
+            $base = mysqli_connect('localhost', 'root', 'root','emotion');
+
+            $string = mysqli_real_escape_string($base,$string);
+
+            $string = addcslashes($string, '%_');
+
+        }
+
+        
+
+        return $string;
+
+    }
+    ?>
+    <head>
+
+        <link rel="stylesheet" href="emoji.css"> 
+        <link rel="stylesheet" href="jquery-ui.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="external/jquery/jquery.js"></script>
+        <script src="jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+
     <header>
         <span> <img src="images/logo-color.png" alt="Emotion" style="width:75px; height:50px;"></img></span>
         <button class="hamburger">&#9776;</button>
@@ -61,9 +110,11 @@
             $(function () {
                 $("#datepicker").datepicker();
             });
-});
-    
 
-</script>
 
-</html>
+
+
+        });
+
+
+    </script>
