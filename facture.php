@@ -21,16 +21,16 @@ $pdf->addReglement("Cheque a reception de facture");
 $pdf->addEcheance("03/12/2003");
 $pdf->addNumTVA("FR888777666");
 $pdf->addReference("Devis ... du ....");
-$cols=array( "REFERENCE"    => 23,
-             "DESIGNATION"  => 78,
-             "QUANTITE"     => 22,
+$cols=array( "ID VEHICULE"    => 23,
+             "VEHICULE"  => 78,
+             "NB JOUR"     => 22,
              "P.U. HT"      => 26,
              "MONTANT H.T." => 30,
              "TVA"          => 11 );
 $pdf->addCols( $cols);
-$cols=array( "REFERENCE"    => "L",
-             "DESIGNATION"  => "L",
-             "QUANTITE"     => "C",
+$cols=array( "ID VEHICULE"    => "L",
+             "VEHICULE"  => "L",
+             "NB JOUR"     => "C",
              "P.U. HT"      => "R",
              "MONTANT H.T." => "R",
              "TVA"          => "C" );
@@ -38,13 +38,9 @@ $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
 $y    = 109;
-$line = array( "REFERENCE"    => "REF1", // Données dynamique
-               "DESIGNATION"  => "Mercedes Classe C\n" . // Données dynamique
-                                 "Climatisation\n" .
-                                 "Boite Automatique\n",
-               "QUANTITE"     => "1\n" . // Données dynamique
-                                 "1\n" .
-                                 "1\n",
+$line = array( "ID VEHICULE"    => "REF1", // Données dynamique
+               "VEHICULE"  => "Mercedes Classe C\n" , // Données dynamique
+               "NB JOUR"     => "1\n" , // Données dynamique
                "P.U. HT"      => "60.000", // Données dynamique
                "MONTANT H.T." => "60.000", // Données dynamique
                "TVA"          => "1" ); // Données dynamique
