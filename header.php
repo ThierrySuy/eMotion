@@ -22,7 +22,7 @@
         else
 
         {
-            $base = mysqli_connect('localhost', 'root', 'root','emotion');
+            $base = mysqli_connect('localhost', 'root', '','emotion');
 
             $string = mysqli_real_escape_string($base,$string);
 
@@ -51,7 +51,7 @@
     </head>
 
     <header>
-        <span><a href="index.php"><img src="images/logo-color.png" alt="Emotion" style="width:75px; height:50px;"></img></a></span>
+        <span> <img src="http://glennsmith.me" alt="Emotion" style="width:75px; height:50px;"></img></span>
         <button class="hamburger">&#9776;</button>
         <button class="cross">&#735;</button>
     </header>
@@ -62,8 +62,8 @@
         <ul>
             <?php
             if (!empty($_SESSION['Auth'])) {
+                $id = $_SESSION['id'];
                 if ($_SESSION['Auth']['role'] == 4) {
-                    $id = $_SESSION['id'];
                     echo '<li style="margin-right:auto;"><a href="control_vehicule.php">Gérer les véhicules de location</a></li>';
                     echo '<li style="margin-right:auto;"><a href="control_loc.php">Gérer les locations</a></li>';
                 }

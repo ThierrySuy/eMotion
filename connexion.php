@@ -29,9 +29,9 @@
                 <div class="inside-form">
                     <div>
                         <label class="mail">Votre identifiant</label>
-                        <input class="form-control" name="mail" id="mail" type="email" required autofocus>
+                        <input class="form-control" name="mail" id="mail" type="email" placeholder="Veuillez rentrer votre mail comme identifiant." required autofocus>
                         <label class="pass">Votre mot de passe</label>
-                        <input class="form-control" name="pass" id="pass" type="password" required>
+                        <input class="form-control" name="pass" id="pass" type="password" placeholder="Veuillez rentrer votre mot de passe." required>
                         <input type="submit" class="button" value="Connexion">
                     </div>
                 </div>
