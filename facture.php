@@ -36,7 +36,19 @@ $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
 $y    = 109;
-$line = array( "ID VEHICULE"    => "REF1", // Données dynamique
+
+
+if(isset($_POST['submit'])){
+// As output of $_POST['Color'] is an array we have to use foreach Loop to display individual value
+foreach ($_POST['Color'] as $select)
+{
+echo "You have selected :" .$select; // Displaying Selected Value
+}
+}
+
+
+$line = array( 
+               "ID VEHICULE"    => "REF1", // Données dynamique
                "VEHICULE"  => "Mercedes Classe C\n" , // Données dynamique
                "NB JOUR"     => "1\n" , // Données dynamique
                "P.U. HT"      => "60.000", // Données dynamique
