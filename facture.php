@@ -1,13 +1,14 @@
-﻿<?php
-
+<?php
+mb_internal_encoding('UTF-8'); 
 session_start(); 
 require('invoice.php');
 
-header('Content-Type: text/html; charset=utf-8');
-
 
 $bdd = new PDO('mysql:host=localhost;dbname=emotion', 'root', '');
+
 $id_loc = $_GET['loc'];
+
+
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
@@ -17,23 +18,23 @@ $pdf->addSociete( "Emotion",
                   "Capital : 120000 " . EURO );
 $pdf->fact_dev( "Devis", "TEMPO" );
 $pdf->temporaire( "Emotion" );
-$pdf->addDate( "03/12/2003");
+$pdf->addDate( "03/03/1995");
 $pdf->addClient("CL01");
 $pdf->addPageNumber("1");
 $pdf->addClientAdresse("Ste\nM. XXXX\n3ème étage\n33, rue d'ailleurs\n75000 PARIS");
 $pdf->addReglement("Chèque à réception de facture");
-$pdf->addEcheance("03/12/2003");
+$pdf->addEcheance("03/03/1995");
 $pdf->addNumTVA("FR888777666");
 $pdf->addReference("Devis ... du ....");
-$cols=array( "REFERENCE"    => 23,
-             "DESIGNATION"  => 78,
+$cols=array( "ID VEHICULE"    => 23,
+             "VEHICULE"  => 78,
              "QUANTITE"     => 22,
              "P.U. HT"      => 26,
              "MONTANT H.T." => 30,
              "TVA"          => 11 );
 $pdf->addCols( $cols);
-$cols=array( "REFERENCE"    => "L",
-             "DESIGNATION"  => "L",
+$cols=array( "ID VEHICULE"    => "L",
+             "VEHICULE"  => "L",
              "QUANTITE"     => "C",
              "P.U. HT"      => "R",
              "MONTANT H.T." => "R",
@@ -41,12 +42,13 @@ $cols=array( "REFERENCE"    => "L",
 $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
-$recup = $bdd->query("SELECT * FROM location WHERE id_location = '$id_loc'");
+
+$recup = $bdd->query("SELECT * FROM location WHERE id_location  = '$id_loc'");
 
    while ( $ligne = $recup->fetch()) {
  
   $numero_serie = $ligne['numero_serie'];
-
+  
  } 
 
  $donnees2 = $bdd->query("SELECT * FROM vehicule WHERE numero_serie = '$numero_serie'");
@@ -54,12 +56,14 @@ $recup = $bdd->query("SELECT * FROM location WHERE id_location = '$id_loc'");
   while ($ligne2 = $donnees2->fetch()) {
  
   $marque = $ligne2['marque'];
-   $modele = $ligne2['modele'];
+  $modele = $ligne2['modele'];
+
+
  } 
 
 $y    = 109;
-$line = array( "REFERENCE"    => "REF1",
-               "DESIGNATION"  => "$marque $modele",
+$line = array( "ID VEHICULE"    => "$numero_serie",
+               "VEHICULE"  => "$marque $modele",
                "QUANTITE"     => "1",
                "P.U. HT"      => "600.00",
                "MONTANT H.T." => "600.00",
