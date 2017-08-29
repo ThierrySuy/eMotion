@@ -33,16 +33,60 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="id_user">ID client de la location *</label>
                                     <div class="col-md-5">
-                                        <input id="id_user" name="id_user" type="int" placeholder="ID client de la location." class="form-control input-md" required="">
+                                        <select name="id_user">
+                                            <option value="">Choisir un client</option>
+                                            <?php
+                                            @mysql_connect("localhost", "root", "");
+                                            mysql_select_db("emotion");
+                                            $req = "select id_user, nom, prenom from user";
+                                            $res = mysql_query($req);
+                                            if (!$res)
+                                                echo mysql_error();
+                                            $ligne = mysql_fetch_assoc($res);
+                                            while ($ligne) {
+                                                echo '<option value="' . $ligne["id_user"] . '">'
+                                                . $ligne["nom"] . ' '. $ligne['prenom'] .'</option>';
+                                                $ligne = mysql_fetch_assoc($res);
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
-                                </br>
+<!--                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="id_user">ID client de la location *</label>
+                                    <div class="col-md-5">
+                                        <input id="id_user" name="id_user" type="int" placeholder="ID client de la location." class="form-control input-md" required="">
+                                    </div>
+                                </div>-->
+                                <br/>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="numero_serie">Numéro de série du véhicule de la location *</label>
                                     <div class="col-md-5">
-                                        <input id="numero_serie" name="numero_serie" type="varchar" placeholder="Numéro de série du véhicule de la location." class="form-control input-md" required="">
+                                        <select name="numero_serie">
+                                            <option value="">Choisir un numéro de série</option>
+                                            <?php
+                                            @mysql_connect("localhost", "root", "");
+                                            mysql_select_db("emotion");
+                                            $req = "select distinct numero_serie from vehicule";
+                                            $res = mysql_query($req);
+                                            if (!$res)
+                                                echo mysql_error();
+                                            $ligne = mysql_fetch_assoc($res);
+                                            while ($ligne) {
+                                                echo '<option value="' . $ligne["numero_serie"] . '">'
+                                                . $ligne["numero_serie"] . '</option>';
+                                                $ligne = mysql_fetch_assoc($res);
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
+                                <!--                                <div class="form-group">
+                                                                    <label class="col-md-4 control-label" for="numero_serie">Numéro de série du véhicule de la location *</label>
+                                                                    <div class="col-md-5">
+                                                                        <input id="numero_serie" name="numero_serie" type="varchar" placeholder="Numéro de série du véhicule de la location." class="form-control input-md" required="">
+                                                                    </div>
+                                                                </div>-->
                                 </br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="date_debut">Date début de la location *</label>

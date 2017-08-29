@@ -64,7 +64,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                         <input id="immatriculation" name="immatriculation" type="text" placeholder="Plaque d'immatriculation du véhicule." class="form-control input-md" required="">
                                     </div>
                                 </div>
-                                </br>
+                                <br/>
                                 <div class="form-group">
                                     <label for="id_type_vehicule">Type de véhicule :</label>
                                     <select name="id_type_vehicule" id="id_type_vehicule" class = "" required>
