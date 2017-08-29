@@ -73,6 +73,7 @@
           <li><a href='recherche.php'>Louer un véhicule</a></li>
           <li><a href='carte-agence.php'>Carte des agences</a></li>
           <li><a href='contact.php'>Nous Contacter</a></li>
+          <li><a href='historique.php'>Historique des réservations</a></li>
           <li><a href='logout.php'>Déconnexion</a></li>";
             } else {
                 echo "
