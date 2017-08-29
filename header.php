@@ -51,7 +51,7 @@
     </head>
 
     <header>
-        <span> <img src="images/logo-color.png" alt="Emotion" style="width:75px; height:50px;"></img></span>
+        <span><a href="index.php"><img src="images/logo-color.png" alt="Emotion" style="width:75px; height:50px;"></img></a></span>
         <button class="hamburger">&#9776;</button>
         <button class="cross">&#735;</button>
     </header>
