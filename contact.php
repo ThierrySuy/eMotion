@@ -23,7 +23,7 @@ include('/header.php');
 <ul class="list-group">
   <li class="list-group-item">Adresse: 24 Rue de Rennes, 75006 Paris</li>
   <li class="list-group-item">Tél: +33 01 00 00 00 00</li>
-  <li class="list-group-item">Mail: contact@mp-paris.com</li>
+  <li class="list-group-item">Mail: <a href="mailto:contact@mp-paris.com">contact@mp-paris.com</a></li>
 </ul>
 
 </div>

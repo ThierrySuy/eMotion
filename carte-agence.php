@@ -40,12 +40,12 @@ include('/header.php');
 
 </br>
 
-<h1 class="display-2">Agence Montparnasse</h1>
+<h3 class="display-2">Agence Montparnasse</h3>
 
 <ul class="list-group">
   <li class="list-group-item">Adresse: 24 Rue de Rennes, 75006 Paris</li>
   <li class="list-group-item">Tél: +33 01 00 00 00 00</li>
-  <li class="list-group-item">Mail: contact@mp-paris.com</li>
+  <li class="list-group-item">Mail: <a href="mailto:contact@mp-paris.com">contact@mp-paris.com</a></li>
 </ul>
 
 </div>
@@ -61,12 +61,12 @@ include('/header.php');
 
 </br>
 
-<h1 class="display-2">Agence Blandan</h1>
+<h3 class="display-2">Agence Blandan</h3>
 
 <ul class="list-group">
   <li class="list-group-item">Adresse: 65 Rue Domer, 69007 Lyon</li>
   <li class="list-group-item">Tél: +33 04 00 00 00 00</li>
-  <li class="list-group-item">Mail: contact@bd-lyon.com</li>
+  <li class="list-group-item">Mail: <a href="mailto:contact@bd-lyon.com">contact@bd-lyon.com</a></li>
 </ul>
 
 </div>
@@ -81,12 +81,12 @@ include('/header.php');
 
 </br>
 
-<h1 class="display-3">Agence Dame de la Garde</h1>
+<h3 class="display-3">Agence Dame de la Garde</h3>
 
 <ul class="list-group">
   <li class="list-group-item">Adresse: 135 Rue d'Aubagne, 13006 Marseille</li>
   <li class="list-group-item">Tél: +33 04 00 00 00 00</li>
-  <li class="list-group-item">Mail: contact@ndg-marseille.com</li>
+  <li class="list-group-item">Mail: <a href="mailto:contact@ndg-marseille.com">contact@ndg-marseille.com</a></li>
 </ul>
 
 </div>
@@ -96,9 +96,13 @@ include('/header.php');
 
  </body>
 
+<div class="col-md-12">
+
+  <?php 
+include('/footer.php'); 
+?>
+</div>
+
 
  </html>
 
- <?php 
-include('/footer.php'); 
-?>

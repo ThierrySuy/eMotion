@@ -66,6 +66,7 @@
                 if ($_SESSION['Auth']['role'] == 4) {
                     echo '<li style="margin-right:auto;"><a href="control_vehicule.php">Gérer les véhicules de location</a></li>';
                     echo '<li style="margin-right:auto;"><a href="control_loc.php">Gérer les locations</a></li>';
+                    echo '<li style="margin-right:auto;"><a href="vehicule_en_location.php">Véhicules en cours de location</a></li>';
                 }
                 echo "    
           <li><a href='profil.php?id=$id'>Mon compte</a></li>
@@ -73,6 +74,7 @@
           <li><a href='recherche.php'>Louer un véhicule</a></li>
           <li><a href='carte-agence.php'>Carte des agences</a></li>
           <li><a href='contact.php'>Nous Contacter</a></li>
+          <li><a href='historique.php'>Historique des réservations</a></li>
           <li><a href='logout.php'>Déconnexion</a></li>";
             } else {
                 echo "

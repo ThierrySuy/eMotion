@@ -55,10 +55,10 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                     }
                                     ?>
                                     <?php
-                                   // $id = $_GET['id'];
+                                    // $id = $_GET['id'];
                                     $donnees = $bdd->query("SELECT * FROM location l, vehicule v"
                                             . " WHERE v.numero_serie = l.numero_serie"
-                                            . " AND l.id_user = ".$_SESSION['id']."");
+                                            . " AND l.id_user = " . $_SESSION['id'] . "");
                                     // echo $id_client = $_POST['id'];
                                     //$donnees = $bdd->query("SELECT * FROM location WHERE id_client = '$id'");
                                     while ($ligne = $donnees->fetch()) {
@@ -76,7 +76,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                             <a href="modif_loc.php?id=<?php echo $ligne['id_location']; ?>">
                                                 <img src="images/modifier.png" alt="">
                                             </a></td>
-                                            <td></td>
+                                        <td><a href="facture.php" target="_blank">Obtenir la facture</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -86,6 +86,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
             </div>
         </div>
     </div>
-    <?php include 'footer.php'; ?>
+        <?php include 'footer.php'; ?>
 </body>
 </html>

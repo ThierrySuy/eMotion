@@ -29,6 +29,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
         $ville = $ligne['ville'];
         $telephone = $ligne['telephone'];
         $numero_permis = $ligne['numero_permis'];
+        $point_fidelite = $ligne['point_fidelite'];
 
     } catch (Exception $e) {
         echo 'Echec de la connexion à la base de données';
@@ -49,6 +50,14 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                         <strong>Modifier votre profil</strong>
                     </h2>
                     <hr>
+                    <p>Vous bénéficiez actuellement de : <?php echo $point_fidelite;?> points de fidelités.</p>
+                    <p>Réductions de locations : </p>
+                        <ul>
+                            <li>À partir de 100€ de locations vous bénéficiez de 10% de réducation de votre prochaine réservation;</li>
+                            <li>À partir de 200€ de locations vous bénéficiez de 20% de réducation de votre prochaine réservation;</li>
+                            <li>À partir de 300€ de locations vous bénéficiez de 30% de réducation de votre prochaine réservation.</li>
+                        </ul>
+                    <br>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -62,14 +71,14 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                         <input id="pass" name="pass" type="password" placeholder="Votre mot de passe." class="form-control input-md" value="<?php echo $pass; ?>" required="">
                                     </div>
                                 </div>
-                                </br>
+                                <br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="mail">Mail *</label>
                                     <div class="col-md-5">
                                         <input id="mail" name="mail" type="text" placeholder="Votre mail." class="form-control input-md" value="<?php echo $mail; ?>" required="">
                                     </div>
                                 </div>
-                                </br>
+                                <br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="nom">Nom *</label>
                                     <div class="col-md-5">
@@ -90,7 +99,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                         <input id="adresse" name="adresse" type="text" placeholder="Votre adresse." class="form-control input-md" value="<?php echo $adresse; ?>" required="">
                                     </div>
                                 </div>
-                                </br>
+                                <br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="code_postal">Code Postal *</label>
                                     <div class="col-md-5">
@@ -104,14 +113,14 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                         <input id="ville" name="ville" type="text" placeholder="Votre ville." class="form-control input-md" value="<?php echo $ville; ?>" required="">
                                     </div>
                                 </div>
-                                </br>
+                                <br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="telephone">Téléphone *</label>
                                     <div class="col-md-5">
                                         <input id="telephone" name="telephone" type="text" placeholder="Votre téléphone." class="form-control input-md" min="1990" max="2018" value="<?php echo $telephone; ?>"  required="">
                                     </div>
                                 </div>
-                                </br>
+                                <br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="numero_permis">Numéro permis *</label>
                                     <div class="col-md-5">
@@ -135,7 +144,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
             </div>
             <div class="clearfix"></div>
         </div>
-    </div>
 <?php include 'footer.php'; ?>
 </body>
 </html>
