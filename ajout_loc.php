@@ -63,18 +63,18 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                     <label class="col-md-4 control-label" for="numero_serie">Numéro de série du véhicule de la location *</label>
                                     <div class="col-md-5">
                                         <select name="numero_serie">
-                                            <option value="">Choisir un numéro de série</option>
+                                            <option value="">Choisir un véhicule</option>
                                             <?php
                                             @mysql_connect("localhost", "root", "");
                                             mysql_select_db("emotion");
-                                            $req = "select distinct numero_serie from vehicule";
+                                            $req = "select distinct * from vehicule";
                                             $res = mysql_query($req);
                                             if (!$res)
                                                 echo mysql_error();
                                             $ligne = mysql_fetch_assoc($res);
                                             while ($ligne) {
                                                 echo '<option value="' . $ligne["numero_serie"] . '">'
-                                                . $ligne["numero_serie"] . '</option>';
+                                                . $ligne["numero_serie"] . ' '. $ligne['marque'] . ' '. $ligne['modele'] . ' '. $ligne['couleur'] . ' '. $ligne['immatriculation'] . '</option>';
                                                 $ligne = mysql_fetch_assoc($res);
                                             }
                                             ?>
