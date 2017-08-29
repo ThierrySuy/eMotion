@@ -20,7 +20,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
         $donnees = $bdd->query("SELECT * FROM user WHERE id_user = '$id'");
         $ligne = $donnees->fetch();
         //Récupération des informations de la Base De Données
-        
         $pass = $ligne['pass'];
         $mail = $ligne['mail'];
         $nom = $ligne['nom'];
