@@ -45,7 +45,7 @@ include('/header.php');
              $date_debut = securite_bdd($_POST['Date_debut']);
              $date_fin = securite_bdd($_POST['Date_fin']);
             
-             $lesimages .= ' AND l.date_debut =< '.$date_prise.' AND l.date_fin =>'.$date_rendu.' OR l.date_debut =< '.$date_rendu.' AND l.date_fin > l.date_debut';
+             $lesimages .= ' AND l.date_debut =< "'.$date_prise.'" AND l.date_fin => "'.$date_rendu.'" OR l.date_debut =< "'.$date_rendu.'" AND l.date_fin > l.date_debut';
              }
                      
             $qimg = mysqli_query($base, $lesimages);
@@ -106,8 +106,10 @@ include('/header.php');
                    
                             </div>
                             <div class="form-group">
-                                <input  name="date_debut" type="date" placeholder="Date de début de la location." class="form-control input-md" required="">
-                                <input  name="date_fin" type="date" placeholder="Date fin de la location." class="form-control input-md" required="">
+                                <label>Date de début</label>
+                                <input  name="date_debut" type="date" placeholder="YYYY/MM/DD" class="form-control input-md" required="">
+                                <label> Date de fin </label>
+                                <input  name="date_fin" type="date" placeholder="YYYY/MM/DD" class="form-control input-md" required="">
                             </div>
                         </ul>
                         <li><input type="submit" class="btn btn-default connard" value="submit"/></li>
