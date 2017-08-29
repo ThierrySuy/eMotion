@@ -25,31 +25,31 @@ include('/header.php');
 
     
 
-            $lesimages .= "SELECT * FROM vehicule v,type_vehicule t WHERE v.id_type_vehicule = t.id_type_vehicule ";
+            $lesimages .= "SELECT * FROM vehicule v,type_vehicule t, location l WHERE v.id_type_vehicule = t.id_type_vehicule ";
             
             if (isset($_POST["ville"])){
                 $lesimages .= "AND v.ville =  '". $ville ."'  ";
             }
-            elseif ($_POST["type"]) {
+            if ($_POST["type"]) {
             $lesimages .= "AND v.id_type_vehicule = '" . $type."'";
         }
             
-             elseif (isset($_POST['couleur'])){
+             if (isset($_POST['couleur'])){
                   $couleur = securite_bdd($_POST["couleur"]);
                  $lesimages .= "AND v.couleur = '".$couleur."'";
                  }
-             elseif(isset ($_POST['model'])){
-                 $lesimages .= "AND v.model = '".$modele."'";
+             if(isset ($_POST['model'])){
+                 $lesimages .= "AND v.modele = '".$modele."'";
              }    
-             elseif (isset ($_POST['Date_debut']) && isset ($_POST['Date_fin'])) {
-             $date_debut = securite_bdd($_POST['Date_debut']);
-             $date_fin = securite_bdd($_POST['Date_fin']);
+             if (isset ($_POST['date_debut']) && isset ($_POST['date_fin'])) {
+             $date_prise = securite_bdd($_POST['date_debut']);
+             $date_rendu = securite_bdd($_POST['date_fin']);
             
-             $lesimages .= ' AND l.date_debut =< "'.$date_prise.'" AND l.date_fin => "'.$date_rendu.'" OR l.date_debut =< "'.$date_rendu.'" AND l.date_fin > l.date_debut';
+             $lesimages .= ' AND( l.date_debut < "'.$date_prise.'" AND l.date_fin > "'.$date_rendu.'" OR l.date_debut < "'.$date_rendu.'" AND l.date_fin > l.date_debut) AND l.numero_serie = v.numero_serie';
              }
-                     
+             var_dump($lesimages);
             $qimg = mysqli_query($base, $lesimages);
-            
+            mysqli_error($base);
            
          
          
