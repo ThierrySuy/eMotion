@@ -1,6 +1,4 @@
 ﻿<?php
-// (c) Xavier Nicolay
-// Exemple de génération de devis/facture PDF
 
 require('invoice.php');
 
@@ -20,7 +18,7 @@ $pdf->addClientAdresse("Ste\nM. XXXX\n3eme etage\n33, rue Didier Druiot\n75000 P
 $pdf->addReglement("Cheque a reception de facture");
 $pdf->addEcheance("03/12/2003");
 $pdf->addNumTVA("FR888777666");
-$pdf->addReference("Devis ... du ....");
+$pdf->addReference("Devis ... du ...."); // Donnée dynamique
 $cols=array( "ID VEHICULE"    => 23,
              "VEHICULE"  => 78,
              "NB JOUR"     => 22,
