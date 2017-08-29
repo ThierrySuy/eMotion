@@ -1,6 +1,4 @@
 <?php
-
-
 require('fpdf.php');
 define('EURO', chr(128) );
 define('EURO_VAL', 6.55957 );
@@ -164,7 +162,7 @@ function fact_dev( $libelle, $num )
     $y2  = $y1 + 2;
     $mid = ($r1 + $r2 ) / 2;
     
-    $texte  = $libelle . " EN " . EURO . " : " . $num;    
+    $texte  = $libelle . " EN " . EURO . " N° : " . $num;    
     $szfont = 12;
     $loop   = 0;
     
@@ -317,13 +315,13 @@ function addNumTVA($tva)
 function addReference($ref)
 {
     $this->SetFont( "Arial", "", 10);
-    $length = $this->GetStringWidth( "References : " . $ref );
+    $length = $this->GetStringWidth( "Références : " . $ref );
     $r1  = 10;
     $r2  = $r1 + $length;
     $y1  = 92;
     $y2  = $y1+5;
     $this->SetXY( $r1 , $y1 );
-    $this->Cell($length,4, "References : " . $ref);
+    $this->Cell($length,4, "Références : " . $ref);
 }
 
 function addCols( $tab )
@@ -387,7 +385,7 @@ function lineVert( $tab )
 function addLine( $ligne, $tab )
 {
     global $colonnes, $format;
-$
+
     $ordonnee     = 10;
     $maxSize      = $ligne;
 
