@@ -4,6 +4,8 @@ footer .top-footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 300px;
+  padding-bottom: : 150px;
 }
 footer .top-footer .sitemap {
   width: 200px;
@@ -24,14 +26,16 @@ footer .top-footer .sitemap p {
 footer .bottom-footer {
   height: 60px;
   background: #313131;
+  text-align: center;
 }
 footer .bottom-footer .bottom-footer-divider {
-  display: flex;
+  padding-top: 18px;
   justify-content: space-between;
   align-items: center;
   width: 62%;
   height: 100%;
   margin: 0 auto;
+  text-align: center;
 }
 footer .bottom-footer .bottom-footer-divider .copyright {
   color: #fff;
