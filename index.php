@@ -95,7 +95,7 @@
 
 </body>
 <br>
- <div class="col-md-5 col-md-offset-4">  
+ <div class="col-md-12">  
 <?php include('/footer.php'); ?>
 </div>
 </html>

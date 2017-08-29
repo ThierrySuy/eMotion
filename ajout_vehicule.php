@@ -139,6 +139,8 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
             </div>
         </div>
     </div>
-    <?php include 'footer.php'; ?>
 </body>
+<div class="col-md-12">  
+    <?php include('/footer.php'); ?>
+</div>
 </html>
