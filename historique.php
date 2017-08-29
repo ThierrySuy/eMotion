@@ -76,7 +76,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                             <a href="modif_loc.php?id=<?php echo $ligne['id_location']; ?>">
                                                 <img src="images/modifier.png" alt="">
                                             </a></td>
-                                            <td></td>
+                                            <td><a href="facture.php" target="_blank">Obtenir la facture</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
