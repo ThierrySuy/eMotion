@@ -96,9 +96,13 @@ include('/header.php');
 
  </body>
 
+<div class="col-md-12">
+
+  <?php 
+include('/footer.php'); 
+?>
+</div>
+
 
  </html>
 
- <?php 
-include('/footer.php'); 
-?>
