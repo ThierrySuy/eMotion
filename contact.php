@@ -12,42 +12,97 @@ include('/header.php');
   <link rel="stylesheet" type="text/css" href="./contact.css">
 </head>
 
-<form name="form1" id="formulairedecontact" method="post" action="envoyer.php">
+<head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"></head><br />
 
+<div class="container-fluid col-md-12">
 
-<div class="container">
-    <div class="row">
-      <form role="form">
-      </br>
-        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-        </div>
-        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-            <label for="exampleInputEmail1">Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Name">
-        </div>
-        <div class="clearfix"></div>
-        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-            <label for="exampleInputPassword1">Phone</label>
-            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Phone">
-        </div>
-        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
-            <label for="exampleInputPassword1">City</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter City">
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
-            <button type="submit" class="btn btn-default">Submit</button>
-        </div>
-    </form>
-    <div class="clearfix"></div>
+<div class="col-md-offset-1 col-md-3 panel panel-default">
 
-    </br>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.94722604657!2d2.2770206578011067!3d48.858837739617705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1503905551633" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<h3 class="display-2">Société Emotion</h3>
 
+<ul class="list-group">
+  <li class="list-group-item">Adresse: 24 Rue de Rennes, 75006 Paris</li>
+  <li class="list-group-item">Tél: +33 01 00 00 00 00</li>
+  <li class="list-group-item">Mail: contact@mp-paris.com</li>
+</ul>
 
-    </div>
 </div>
+
+<img src="./images/map.jpg" height="180px" width="450px">
+
+</div>
+
+
+<div class="inner contact">
+               
+                <div class="contact-form">
+                    
+                    <form id="contact-us" method="post" action="./envoyer.php">
+
+                    <div class="container-fluid col-xs-12">
+
+                        <div class="col-xs-3 col-md-offset-1">
+                            
+                            <input type="text" name="nom" id="nom" required="required" class="form" placeholder="Nom" />
+
+                        </div>
+
+                        <div class="col-xs-3">
+                            
+                            <input type="text" name="prenom" id="prenom" required="required" class="form" placeholder="Prenom" />
+
+                        </div>
+
+                    </div>
+
+                        <div class="col-xs-6 col-md-offset-1">
+                            
+                            <input type="mail" name="mail" id="mail" required="required" class="form" placeholder="Email" />
+
+                        </div>
+
+                    <div class="container-fluid col-xs-12 col-md-offset-1">
+
+                        <div class="col-xs-3">
+                            
+                            <input type="text" name="sujet" id="sujet" required="required" class="form" placeholder="Sujet" />
+
+                        </div>
+
+                    </div>
+
+                        
+                        <div class="col-xs-6 col-md-offset-1">
+                            
+                            <textarea name="message" id="message" class="form textarea"  placeholder="Votre Message"></textarea>
+
+                        </div>
+                        
+
+                        <div class="col-xs-6 col-md-offset-1">
+                            
+                            <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button> 
+
+                        </div>
+                        
+                        <div class="clear"></div>
+
+                    </form>
+
+                </div>
+
+</div>
+
+</body>
+
+<div class="col-md-12">
+    
+<?php 
+include('/footer.php'); 
+?>
+
+</div>
+
+
 
 </html>
