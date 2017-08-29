@@ -81,7 +81,7 @@
                             ?>
 
                         <form name="validate" action="./recap.php" method="post">
-                         <input type="submit" name="Submit" id="'$vehicule'" value="Valider"> 
+                         <input type="submit" name="Submit" id="<?php echo $vehicule ;?>" value="Valider"> 
                         </form>
                         
                         <?php
@@ -90,7 +90,7 @@
                         else {
                         $vehicule = $_POST["id"];
 
-                        $car = mysqli_query($base, "SELECT * FROM vehicule WHERE numero_serie = '".$vehicule."'");
+                        $car = mysqli_query($base, "SELECT * FROM vehicule v, Location l WHERE v.numero_serie = '".$vehicule."'");
 
                         $car2 = mysqli_fetch_assoc($car);
 
@@ -98,9 +98,13 @@
 
                         $numero_serie = $car2["numero_serie"];
 
-                        $date_debut = $car2["date_debut"];
+                        $date_debut = $_POST["date_debut"];
 
-                        $date_fin = $car2["date_fin"];
+                        $date_fin = $_POST["date_fin"];
+                        
+                        $etat_location = $car2["etat_location"];
+                        
+                        $duree_jour = $car2["duree_jour"];
 
 
 
@@ -108,9 +112,9 @@
 
 
 
-                        $result = mysqli_query("INSERT INTO `location` (`id_location`, `id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (NULL, ".$id_user.", ".$numero_serie.", ".$date_debut.", ".$date_fin.", ".$etat_location.", ".$duree_jour."');") or die(mysqli_error());
+                        $result = mysqli_query($base,"INSERT INTO `location` (`id_location`, `id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (NULL, ".$id_user.", ".$numero_serie.", ".$date_debut.", ".$date_fin.", ".$etat_location.", ".$duree_jour."');");
 
-                        $username =  securite_bdd($_POST["username"]);
+            
 
 
 

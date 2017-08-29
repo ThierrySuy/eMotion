@@ -13,28 +13,40 @@ include('/header.php');
 
      
         <?php
-        $base = mysqli_connect('localhost', 'root', 'root','emotion');
+        $base = mysqli_connect('localhost', 'root', '','emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
             $ville =  securite_bdd($_POST["ville"]);
             $type =  securite_bdd($_POST["type"]);
            
+            
             $lesimages = "";
 
 
 
-            $sql = "SELECT * FROM vehicule ";
+    
 
-            $lesimages .= "SELECT * FROM vehicule v,type_vehicule t WHERE v.id_type_vehicule = t.id_type_vehicule AND v.ville =  '". $ville ."'  AND v.id_type_vehicule = '" . $type."'";
+            $lesimages .= "SELECT * FROM vehicule v,type_vehicule t WHERE v.id_type_vehicule = t.id_type_vehicule ";
             
-             if (isset($_POST['couleur'])){
+            if (isset($_POST["ville"])){
+                $lesimages .= "AND v.ville =  '". $ville ."'  ";
+            }
+            elseif ($_POST["type"]) {
+            $lesimages .= "AND v.id_type_vehicule = '" . $type."'";
+        }
+            
+             elseif (isset($_POST['couleur'])){
                   $couleur = securite_bdd($_POST["couleur"]);
                  $lesimages .= "AND v.couleur = '".$couleur."'";
                  }
              elseif(isset ($_POST['model'])){
                  $lesimages .= "AND v.model = '".$modele."'";
              }    
-            // $lesimages .= ' AND l.date_debut =< '.$date_prise.' AND l.date_fin =>'.$date_rendu.' OR l.date_debut =< '.$date_rendu.' AND l.date_fin > l.date_debut';
-          
+             elseif (isset ($_POST['Date_debut']) && isset ($_POST['Date_fin'])) {
+             $date_debut = securite_bdd($_POST['Date_debut']);
+             $date_fin = securite_bdd($_POST['Date_fin']);
+            
+             $lesimages .= ' AND l.date_debut =< '.$date_prise.' AND l.date_fin =>'.$date_rendu.' OR l.date_debut =< '.$date_rendu.' AND l.date_fin > l.date_debut';
+             }
                      
             $qimg = mysqli_query($base, $lesimages);
             
@@ -58,7 +70,7 @@ include('/header.php');
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.php">Home</a></li>
                             <div class="form-group">
-                                <select class="form-control connard" name="ville">
+                                <select class="form-control connard" name="ville" required>
                                     <option value="" disabled selected>Choisir une ville..</option>
                                     <option value="1">Paris</option>
                                     <option value="2">Lyon</option>
@@ -66,7 +78,7 @@ include('/header.php');
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-control connard" name="type">
+                                <select class="form-control connard" name="type" required>
                                     <option value="" disabled selected>Choisir un type..</option>
                                     <option value="1">scooter</option>
                                     <option value="2">voiture</option>
@@ -91,6 +103,11 @@ include('/header.php');
                                     <option value="coupe">coupé</option>
                                     <option value="break">break</option>
                                 </select>
+                   
+                            </div>
+                            <div class="form-group">
+                                <input  name="date_debut" type="date" placeholder="Date de début de la location." class="form-control input-md" required="">
+                                <input  name="date_fin" type="date" placeholder="Date fin de la location." class="form-control input-md" required="">
                             </div>
                         </ul>
                         <li><input type="submit" class="btn btn-default connard" value="submit"/></li>
@@ -110,11 +127,17 @@ include('/header.php');
                     <form action="recap.php" method="POST">
                     <div class="col-md-offset-1 col-md-3 panel panel-default">
                         <input name ="id" type="hidden" value="<?php echo $img["numero_serie"] ;?>">
+                        <?php if (isset ($_POST['date_debut']) && isset ($_POST['date_fin'])) { ?>
+                        <input name ="date_debut" type="hidden" value="<?php echo $_POST['date_debut'] ;?>">
+                        <input name ="date_fin" type="hidden" value="<?php echo $_POST['date_fin'] ;?>">
+                        <?php } ?>
                         <div class="panel-heading"><h4><span class="label label-primary"><?php echo $img["marque"]."-".$img["modele"]; ?></span></h4></div> 
                         <div class="panel-body"> <img src="voiture.png" class="col-md-12" alt="Hé Hé"> </div>
                     <div class="panel-footer">
+                        
                         <h4><span class="label label-success"><?php echo $img["prix"]."€ /J"; ?></span></h4>
                         <input class="btn btn-info"  type="submit"  value="Submit"/> 
+                        
                     </div>
                   
                     </div>
