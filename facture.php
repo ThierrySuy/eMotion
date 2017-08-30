@@ -29,14 +29,14 @@ $pdf->addReference("Devis ... du ....");
 $cols=array( "ID VEHICULE"    => 23,
              "VEHICULE"  => 78,
              "QUANTITE"     => 22,
-             "P.U. HT"      => 26,
+             "PRIX PAR JOUR"      => 26,
              "MONTANT H.T." => 30,
              "TVA"          => 11 );
 $pdf->addCols( $cols);
 $cols=array( "ID VEHICULE"    => "L",
              "VEHICULE"  => "L",
              "QUANTITE"     => "C",
-             "P.U. HT"      => "R",
+             "PRIX PAR JOUR"      => "R",
              "MONTANT H.T." => "R",
              "TVA"          => "C" );
 $pdf->addLineFormat( $cols);
@@ -57,6 +57,7 @@ $recup = $bdd->query("SELECT * FROM location WHERE id_location  = '$id_loc'");
  
   $marque = $ligne2['marque'];
   $modele = $ligne2['modele'];
+  $prix = $ligne2['prix'];
 
 
  } 
@@ -65,9 +66,9 @@ $y    = 109;
 $line = array( "ID VEHICULE"    => "$numero_serie",
                "VEHICULE"  => "$marque $modele",
                "QUANTITE"     => "1",
-               "P.U. HT"      => "600.00",
-               "MONTANT H.T." => "600.00",
-               "TVA"          => "1" );
+               "PRIX PAR JOUR"      => "$prix",
+               "MONTANT H.T." => "$prix",
+               "TVA"          => "20%" );
 $size = $pdf->addLine( $y, $line );
 $y   += $size + 2;
 
