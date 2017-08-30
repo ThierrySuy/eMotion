@@ -45,13 +45,13 @@ include('/header.php');
              $date_prise = securite_bdd($_POST['date_debut']);
              $date_rendu = securite_bdd($_POST['date_fin']);
             
-             $lesimages .= ' AND( l.date_debut < "'.$date_prise.'" AND l.date_fin > "'.$date_rendu.'" OR l.date_debut < "'.$date_rendu.'" AND l.date_fin > l.date_debut) AND l.numero_serie = v.numero_serie';
+             $lesimages .= ' AND(( l.date_debut > "'.$date_rendu.'") OR (l.date_fin < "'.$date_prise.'")) AND  l.numero_serie  = v.numero_serie';
              }
            
             $qimg = mysqli_query($base, $lesimages);
 
            
-         
+          
          
             mysqli_close($base);
 
@@ -132,6 +132,10 @@ include('/header.php');
                         <?php if (isset ($_POST['date_debut']) && isset ($_POST['date_fin'])) { ?>
                         <input name ="date_debut" type="hidden" value="<?php echo $_POST['date_debut'] ;?>">
                         <input name ="date_fin" type="hidden" value="<?php echo $_POST['date_fin'] ;?>">
+                        <input name="prix" type="hidden" value="<?php echo $img['prix'];?>"> 
+                        <input name="modele" type="hidden" value="<?php echo $img['modele'];?>">
+                        <input name="prix" type="hidden" value="<?php echo $img['prix'];?>">
+                        <input name="marque" type="hidden" value="<?php echo $img['marque'];?>">
                         <?php } ?>
                         <div class="panel-heading"><h4><span class="label label-primary"><?php echo $img["marque"]."-".$img["modele"]; ?></span></h4></div> 
                         <div class="panel-body"> <img src="voiture.png" class="col-md-12" alt="Hé Hé"> </div>

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-
+               <?php if(isset($_POST['modele'])) { ?>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -23,36 +23,40 @@
                         <tr>
                             <td class="col-sm-8 col-md-6">
                                 <div class="media">
-                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="https://m.bmw.fr/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/navigation/BMW-4-Series-Gran-Coupe-ModelCard.png" style="width: 72px; height: 72px;"> </a>
+                                    
+                                     <img class="media-object" src="https://m.bmw.fr/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/navigation/BMW-4-Series-Gran-Coupe-ModelCard.png" style="width: 72px; height: 72px;"> 
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">BMW Serie 5</a></h4>
-                                        <h5 class="media-heading"> by <a href="#">BMW</a></h5>
-                                        <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                        <h4 class="media-heading"><?php echo $_POST['modele'];?></h4>
+                                        <h5 class="media-heading"><?php echo $_POST['marque'];?></h5>
+                                        <span>Status: </span><span class="text-success"><strong>En Stock</strong></span>
                                     </div>
                                 </div></td>
                             <td class="col-sm-1 col-md-1" style="text-align: center">
                                 <input type="email" class="form-control" id="exampleInputEmail1" value="1">
                             </td>
-                            <td class="col-sm-1 col-md-1 text-center"><strong>$50.000</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong><?php echo $_POST['prix'];?>€ /J</strong></td>
 
                             <td class="col-sm-1 col-md-1">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span> Remove
-                                </button></td>
+                                <a href="recherche.php" class="btn btn-large btn-danger">  Retour
+                                </a></td>
                         </tr>
 
                         <tr>
-                            <td>   </td>
-                            <td><h2>Total</h2></td>
-                            <td class="text-right"><h3><strong><?php //echo $recap['prix_achat'];  ?></strong></h3></td>
+                            
                         </tr>
                         <tr>
                             <td>   </td>
                             <td>
-                                <button type="button" class="btn btn-default">
-
-                                </button>
+                                    <?php } 
+                                    
+                                    if(!isset($_POST['modele'])){ ?>
+                                        
+                                <h1 class='col-md-offset-2'> VOTRE COMMANDE A BIEN ETE RECU !! </h1>
+                                <a href="index.php" class="btn btn-large btn-danger col-md-4 col-md-offset-4">  Retour A l'accueil
+                                </a>
+                                    <?php }  ?> 
                                 <?php if (isset($_POST['id'])) { ?>
+                                
                                     <form action="" method="post">
                                         <input type="hidden" name="insert_loc">
                                         <input type="hidden" name="id2" value="<?php echo $_POST['id']; ?>">
@@ -111,7 +115,7 @@
                                     if (isset($_POST['insert_loc'])) {
 
 
-                                        var_dump(insert_loc($id_user, $numero_serie, $date_debut, $date_fin, $duree_jour));
+                                        
 
 
                                        
