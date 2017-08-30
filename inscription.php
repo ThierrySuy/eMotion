@@ -18,10 +18,20 @@
         
 	</head>
 
-
-
 	<center><body>
-		Inscription sur la plateforme:
+
+		<img src="./images/slogan.png">
+
+		<blockquote class="col-md-6 col-sm-offset-3" class="blockquote"></br></br>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat venenatis diam quis blandit. Donec ornare felis sed lacinia maximus. Morbi fermentum mollis purus ac cursus. Vestibulum hendrerit non lectus finibus pharetra. Etiam eu velit felis. Nullam tincidunt tempus arcu, et porttitor velit blandit sed. Suspendisse tincidunt nibh leo, in volutpat diam fringilla in. Duis at lectus id magna malesuada bibendum et vel libero.
+
+<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+
+</blockquote>
+
+
+</br></br></br></br></br>
+</br></br></br></br></br>
 		
 		
 	<form class="form-inline" action="recup.php" method="post"></br>
@@ -33,7 +43,9 @@
 		<!-- <div class="container-fluid col-md-5"> -->
 		
 
+</br></br></br></br></br></br></br></br></br></br></br></br>
 
+<center><h1 class="display-2">Inscription</h1></center>
 	
 
 	<div class="container-fluid col-md-3 col-md-offset-2">

@@ -6,6 +6,9 @@ body{
   	background:#ffffff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+  background-image:url(images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 header{
 	width:100%; 
