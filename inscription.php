@@ -20,7 +20,7 @@
 
 
 
-	<body>
+	<center><body>
 		Inscription sur la plateforme:
 		
 		
@@ -36,7 +36,7 @@
 
 	
 
-	<div class="container-fluid col-md-3 col-md-offset-2 text-right">
+	<div class="container-fluid col-md-3 col-md-offset-2">
 
 		<input placeholder="Nom" type="text" class="form-control" name="nom" value="<?php if (isset($_POST['nom'])) echo htmlentities(trim($_POST['nom'])); ?>" required="">
 
@@ -69,7 +69,7 @@
 		<div class="col-md-12"></div>
 	
 
-	<div class="container-fluid col-md-3 col-md-offset-2 text-right"></br>
+	<div class="container-fluid col-md-3 col-md-offset-2"></br>
 
 		<input placeholder="N° Permis" type="text" class="form-control" name="numero_permis" value="<?php if (isset($_POST['numero_permis'])) echo htmlentities(trim($_POST['numero_permis'])); ?>" required=""></br>
 		
@@ -94,11 +94,10 @@
 		</br>
 
 
-		<input class="container-fluid col-md-3 col-md-offset-4" type="submit" name="inscription" value="S'inscrire">
+		<!--<input class="container-fluid col-md-3 col-md-offset-4" type="submit" name="inscription" value="S'inscrire">-->
+		<button name="inscription" type="submit" class="btn btn-success">Sinscrire</button></center>
 
 		</form>
-
-
 	
 
 <?php
