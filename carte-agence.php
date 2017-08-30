@@ -31,7 +31,7 @@ include('/header.php');
 
 <div class="container-fluid col-md-12">
 
-<div class="col-md-offset-1 col-md-3 panel panel-default">
+<div class="col-md-offset-3  col-md-3 panel panel-default">
 
 <h1 class="display-1">Paris</h1>
 
@@ -69,27 +69,6 @@ include('/header.php');
   <li class="list-group-item">Mail: <a href="mailto:contact@bd-lyon.com">contact@bd-lyon.com</a></li>
 </ul>
 
-</div>
-
-<div class="col-md-3 panel panel-default">
-
-
-<h1 class="display-1">Marseille</h1>
-
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1452.0141651267809!2d5.381920258308271!3d43.292728394783815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9c0bb2efc0afb%3A0x96f16c87cd43de76!2s135+Rue+d&#39;Aubagne%2C+13006+Marseille!5e0!3m2!1sfr!2sfr!4v1503993569782" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-</br>
-
-<h3 class="display-3">Agence Dame de la Garde</h3>
-
-<ul class="list-group">
-  <li class="list-group-item">Adresse: 135 Rue d'Aubagne, 13006 Marseille</li>
-  <li class="list-group-item">Tél: +33 04 00 00 00 00</li>
-  <li class="list-group-item">Mail: <a href="mailto:contact@ndg-marseille.com">contact@ndg-marseille.com</a></li>
-</ul>
-
-</div>
 </div>
 
 
