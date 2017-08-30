@@ -86,10 +86,10 @@
 <br>
 <br>
 
-<div class="container-fluid col-md-offset-5 col-md-6">
-<img class="col-md-2" src="" alt="Hé Hé">
-<img class="col-md-2" src="" alt="Hé Hé">
-<img class="col-md-2" src="" alt="Hé Hé">
+<div class="container-fluid col-md-offset-4 col-md-8">
+<img class="col-md-2" src="./images/car-06.png" alt="Hé Hé">
+<img class="col-md-2" src="./images/scooter-01.png" alt="Hé Hé">
+<img class="col-md-2" src="./images/car-05.png" alt="Hé Hé">
 </div>
 
 
