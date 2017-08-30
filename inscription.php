@@ -32,18 +32,13 @@
 
 </br></br></br></br></br>
 </br></br></br></br></br>
+</br></br></br></br></br>
 		
 		
 	<form class="form-inline" action="recup.php" method="post"></br>
-
-		<!-- <div class="container"> -->
-
-		<!--<div class="container-fluid col-md-offset-4"> -->
-
-		<!-- <div class="container-fluid col-md-5"> -->
 		
 
-</br></br></br></br></br></br></br></br></br></br></br></br>
+</br>
 
 <center><h1 class="display-2">Inscription</h1></center>
 	
@@ -100,6 +95,7 @@
  
 		<input placeholder="Confirmation du mot de passe" type="password" class="form-control" name="pass_confirm" value="<?php if (isset($_POST['pass_confirm'])) echo htmlentities(trim($_POST['pass_confirm'])); ?>" required="">
 
+</br></br></br></br></br>
 
 		</div>
 
@@ -108,6 +104,8 @@
 
 		<!--<input class="container-fluid col-md-3 col-md-offset-4" type="submit" name="inscription" value="S'inscrire">-->
 		<button name="inscription" type="submit" class="btn btn-success">Sinscrire</button></center>
+
+
 
 		</form>
 	

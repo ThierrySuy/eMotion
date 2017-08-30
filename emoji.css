@@ -6,13 +6,21 @@ body{
   	background:#ffffff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  background-image:url(images/background.jpg);
+
+}
+
+.form-inline {
+
+    background-image:url(images/background.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
+
+
+
 }
 header{
 	width:100%; 
-	background:#A0A0A0; 
+	background:#E5E500; 
 	height:60px; 
 	line-height:60px;
 	border-bottom:1px solid #dddddd;
