@@ -4,7 +4,6 @@ include 'header.php';
 if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
     $role = $_SESSION['Auth']['role'];
     $id = $_SESSION['id'];
-    //var_dump($_SESSION);
 } else {
     header('Location:index.php');
 }
@@ -52,12 +51,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                         </select>
                                     </div>
                                 </div>
-<!--                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="id_user">ID client de la location *</label>
-                                    <div class="col-md-5">
-                                        <input id="id_user" name="id_user" type="int" placeholder="ID client de la location." class="form-control input-md" required="">
-                                    </div>
-                                </div>-->
                                 <br/>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="numero_serie">Numéro de série du véhicule de la location *</label>
@@ -81,12 +74,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                         </select>
                                     </div>
                                 </div>
-                                <!--                                <div class="form-group">
-                                                                    <label class="col-md-4 control-label" for="numero_serie">Numéro de série du véhicule de la location *</label>
-                                                                    <div class="col-md-5">
-                                                                        <input id="numero_serie" name="numero_serie" type="varchar" placeholder="Numéro de série du véhicule de la location." class="form-control input-md" required="">
-                                                                    </div>
-                                                                </div>-->
                                 </br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="date_debut">Date début de la location *</label>

@@ -4,7 +4,6 @@ include 'header.php';
 if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
     $role = $_SESSION['Auth']['role'];
     $id = $_SESSION['id'];
-    //var_dump($_SESSION);
 } else {
     header('Location:index.php');
 }
@@ -157,12 +156,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                         if ($ville == 2) {
                                             echo "selected";
                                         }
-                                        ?> >Lyon</option>            
-                                        <option value="3" <?php
-                                        if ($ville == 3) {
-                                            echo "selected";
-                                        }
-                                        ?> >Marseille</option>            
+                                        ?> >Lyon</option>                      
                                     </select>
                                 </div><br>
                                 <div class="form-group">

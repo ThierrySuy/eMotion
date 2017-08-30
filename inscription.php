@@ -18,22 +18,29 @@
         
 	</head>
 
-
-
 	<center><body>
-		Inscription sur la plateforme:
+
+		<img src="./images/slogan.png">
+
+		<blockquote class="col-md-6 col-sm-offset-3" class="blockquote"></br></br>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat venenatis diam quis blandit. Donec ornare felis sed lacinia maximus. Morbi fermentum mollis purus ac cursus. Vestibulum hendrerit non lectus finibus pharetra. Etiam eu velit felis. Nullam tincidunt tempus arcu, et porttitor velit blandit sed. Suspendisse tincidunt nibh leo, in volutpat diam fringilla in. Duis at lectus id magna malesuada bibendum et vel libero.
+
+<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+
+</blockquote>
+
+
+</br></br></br></br></br>
+</br></br></br></br></br>
+</br></br></br></br></br>
 		
 		
 	<form class="form-inline" action="recup.php" method="post"></br>
-
-		<!-- <div class="container"> -->
-
-		<!--<div class="container-fluid col-md-offset-4"> -->
-
-		<!-- <div class="container-fluid col-md-5"> -->
 		
 
+</br>
 
+<center><h1 class="display-2">Inscription</h1></center>
 	
 
 	<div class="container-fluid col-md-3 col-md-offset-2">
@@ -88,6 +95,7 @@
  
 		<input placeholder="Confirmation du mot de passe" type="password" class="form-control" name="pass_confirm" value="<?php if (isset($_POST['pass_confirm'])) echo htmlentities(trim($_POST['pass_confirm'])); ?>" required="">
 
+</br></br></br></br></br>
 
 		</div>
 
@@ -96,6 +104,8 @@
 
 		<!--<input class="container-fluid col-md-3 col-md-offset-4" type="submit" name="inscription" value="S'inscrire">-->
 		<button name="inscription" type="submit" class="btn btn-success">Sinscrire</button></center>
+
+
 
 		</form>
 	

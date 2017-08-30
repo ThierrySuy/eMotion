@@ -4,7 +4,6 @@ include 'header.php';
 if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
     $role = $_SESSION['Auth']['role'];
     $id = $_SESSION['id'];
-    //var_dump($_SESSION);
 } else {
     header('Location:index.php');
 }
