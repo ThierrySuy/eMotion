@@ -39,7 +39,7 @@ include('/header.php');
                     
                     <form id="contact-us" method="post" action="./envoyer.php">
 
-                    <div class="container-fluid col-xs-11">
+
 
                         <div class="col-xs-3 col-md-offset-1">
                             
@@ -53,7 +53,7 @@ include('/header.php');
 
                         </div>
 
-                    </div>
+                   
 
                         <div class="container-fluid col-xs-6 col-md-offset-1">
                             
