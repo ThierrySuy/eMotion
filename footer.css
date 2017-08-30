@@ -5,8 +5,9 @@ footer .top-footer {
   justify-content: center;
   align-items: center;
   margin-top: 300px;
-  padding-bottom: : 150px;
+  padding-bottom: :150px;
 }
+
 footer .top-footer .sitemap {
   width: 200px;
   border-left: 1px solid #efefef;

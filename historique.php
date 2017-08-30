@@ -64,6 +64,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                     while ($ligne = $donnees->fetch()) {
 
                                         $id_loc = $ligne['id_location'];
+                                        
                                         ?>
                                         <!-- Ajout des lignes présentes dans la Base De Données -->
                                     <tr>
