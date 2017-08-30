@@ -162,7 +162,7 @@ function fact_dev( $libelle, $num )
     $y2  = $y1 + 2;
     $mid = ($r1 + $r2 ) / 2;
     
-    $texte  = $libelle . " EN " . EURO . " N° : " . $num;    
+    $texte  = $libelle . " : " . $num;    
     $szfont = 12;
     $loop   = 0;
     
@@ -315,13 +315,13 @@ function addNumTVA($tva)
 function addReference($ref)
 {
     $this->SetFont( "Arial", "", 10);
-    $length = $this->GetStringWidth( "Références : " . $ref );
+    $length = $this->GetStringWidth( "References : " . $ref );
     $r1  = 10;
     $r2  = $r1 + $length;
     $y1  = 92;
     $y2  = $y1+5;
     $this->SetXY( $r1 , $y1 );
-    $this->Cell($length,4, "Références : " . $ref);
+    $this->Cell($length,4, "References : " . $ref);
 }
 
 function addCols( $tab )
