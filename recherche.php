@@ -25,7 +25,7 @@ include('/header.php');
 
     
 
-            $lesimages .= "SELECT * FROM vehicule v,type_vehicule t, location l WHERE v.id_type_vehicule = t.id_type_vehicule ";
+            $lesimages .= "SELECT v.* FROM vehicule v INNER JOIN  type_vehicule t ON v.id_type_vehicule = t.id_type_vehicule INNER JOIN location l ON l.numero_serie = v.numero_serie ";
             
             if (isset($_POST["ville"])){
                 $lesimages .= "AND v.ville =  '". $ville ."'  ";
@@ -45,12 +45,12 @@ include('/header.php');
              $date_prise = securite_bdd($_POST['date_debut']);
              $date_rendu = securite_bdd($_POST['date_fin']);
             
-             $lesimages .= ' AND(( l.date_debut > "'.$date_rendu.'") OR (l.date_fin < "'.$date_prise.'")) AND  l.numero_serie  = v.numero_serie';
+             $lesimages .= 'AND(( l.date_debut > "'.$date_rendu.'") OR (l.date_fin < "'.$date_prise.'")) GROUP BY v.numero_serie';
              }
            
             $qimg = mysqli_query($base, $lesimages);
 
-           
+    
           
          
             mysqli_close($base);
@@ -74,7 +74,7 @@ include('/header.php');
                                     <option value="" disabled selected>Choisir une ville..</option>
                                     <option value="1">Paris</option>
                                     <option value="2">Lyon</option>
-                                    <option value="3">Marseille</option>
+                                    
                                 </select>
                             </div>
                             <div class="form-group">
