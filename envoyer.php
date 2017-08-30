@@ -21,7 +21,4 @@ else // Non envoyé
     echo "Votre message n'a pas pu être envoyé";
 }
 
-ini_set("SMTP","smtp.gmail.com");
-ini_set("sendmail_from","suy.thierry21@gmail.com");
-
 ?>

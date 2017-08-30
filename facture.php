@@ -98,7 +98,7 @@ $params  = array( "RemiseGlobale" => 1,
                       "portTVA"        => 19.6,    // valeur de la TVA a appliquer sur le montant HT
                   "AccompteExige" => 1,
                       "accompte"         => 0,     // montant de l'acompte (TTC)
-                      "accompte_percent" => 15,    // pourcentage d'acompte (TTC)
+                      "accompte_percent" => 0,    // pourcentage d'acompte (TTC)
                   "Remarque" => "Avec un acompte, svp..." );
 
 $pdf->addTVAs( $params, $tab_tva, $tot_prods);

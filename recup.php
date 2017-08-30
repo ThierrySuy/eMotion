@@ -26,13 +26,8 @@
 			    header('Location: index.php');
 			    exit();
 
-			    /* ce fichier permet de récupérer les données via le formulaire d'inscription
-
-			    foreach $resultat {
-			    ?>
 			    
-			    <?php ?>
 			    }
-			    */
+			    
 
 ?>

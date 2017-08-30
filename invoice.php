@@ -645,8 +645,6 @@ function addTVAs( $params, $tab_tva, $invoice )
             else
                 $this->addRemarque( $params["Remarque"] );
         }
-        else
-            $this->addRemarque( "Drôle d'acompte !!! " . $params["Remarque"]);
     }
     else
     {
