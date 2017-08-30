@@ -40,7 +40,7 @@ include('/header.php');
 
 </br>
 
-<h3 class="display-2">Agence Montparnasse</h3>
+<h3 class="display-2">Agence Montparnasse</h3>a
 
 <ul class="list-group">
   <li class="list-group-item">Adresse: 24 Rue de Rennes, 75006 Paris</li>

@@ -26,7 +26,8 @@ $recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_us
   
  } 
 
-  $donnees2 = $bdd->query("SELECT * FROM vehicule WHERE numero_serie = '$numero_serie'");
+  $donnees2 = $bdd->query("SELECT * FROM vehicule WHERE numero_serie = '$numero_serie'"); 
+  // requête pour pointer sur la tablea: vehicule et récupérer les données de la voiture louée
 
   while ($ligne2 = $donnees2->fetch()) {
  
@@ -41,18 +42,17 @@ $recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_us
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
+// information sur notre société
 $pdf->addSociete( "Emotion",
                   "24 Rue de Rennes\n" .
                   "75006 PARIS\n".
                   "Capital : 20M " . EURO );
 $pdf->fact_dev( "Facture Num.", "$id_location" );
 $pdf->temporaire( "Emotion" );
-
 $pdf->addClient("$id_user");
 $pdf->addPageNumber("1");
 $pdf->addClientAdresse("\n$prenom $nom\n$adresse\n$code_postal $ville");
 $pdf->addReglement("Carte Bancaire");
-
 $pdf->addNumTVA("FR888777666");
 
 $cols=array( "NUM. SERIE"    => 23,
@@ -72,7 +72,10 @@ $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
 
+
 $y    = 109;
+
+// attribution des données récupérées dans le tableau avec les libellés correspondant
 $line = array( "NUM. SERIE"    => "$numero_serie",
                "VEHICULE"  => "$marque $modele $immatriculation $couleur $annee",
                "NB JOUR"     => "$duree_jour",
@@ -83,7 +86,8 @@ $size = $pdf->addLine( $y, $line );
 $y   += $size + 2;
 
 $pdf->addCadreTVAs();
-  
+
+// calcul du montant final que le client devra payer
 $tot_prods = array( array ( "px_unit" => "$prix" * "$duree_jour", "qte" => 1, "tva" => 1 ));
 $tab_tva = array( "1"       => 20,
                   "2"       => 5.5);
