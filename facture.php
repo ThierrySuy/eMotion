@@ -19,6 +19,9 @@ $recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_us
   $adresse = $ligne['adresse'];
   $code_postal = $ligne['code_postal'];
   $ville = $ligne['ville'];
+  $id_user = $ligne['id_user'];
+  $duree_jour = $ligne['duree_jour'];
+  $id_location = $ligne['id_location'];
   
  } 
 
@@ -37,30 +40,31 @@ $recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_us
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
-$pdf->addSociete( "Emotion",
+$pdf->addSociete( echo "<img src=\"images/logo-color.png\"  />" .
+                  "Emotion" .
                   "24 Rue de Rennes\n" .
                   "75006 PARIS\n".
                   "Capital : 120000 " . EURO );
-$pdf->fact_dev( "Devis", "Temporaire" );
+$pdf->fact_dev( "Facture Num.", "$id_location" );
 $pdf->temporaire( "Emotion" );
 
-$pdf->addClient("CL01");
+$pdf->addClient("$id_user");
 $pdf->addPageNumber("1");
 $pdf->addClientAdresse("\n$prenom $nom\n$adresse\n$code_postal $ville");
-$pdf->addReglement("Cheque a reception de facture");
+$pdf->addReglement("Carte Bancaire");
 
 $pdf->addNumTVA("FR888777666");
 
 $cols=array( "NUM. SERIE"    => 23,
              "VEHICULE"  => 78,
-             "QUANTITE"     => 22,
+             "NB JOUR"     => 22,
              "DATE PRISE"      => 26,
              "MONTANT HT" => 30,
              "TVA"          => 11 );
 $pdf->addCols( $cols);
 $cols=array( "NUM. SERIE"    => "L",
              "VEHICULE"  => "L",
-             "QUANTITE"     => "C",
+             "NB JOUR"     => "C",
              "DATE PRISE"      => "R",
              "MONTANT HT" => "R",
              "TVA"          => "C" );
@@ -71,16 +75,16 @@ $pdf->addLineFormat($cols);
 $y    = 109;
 $line = array( "NUM. SERIE"    => "$numero_serie",
                "VEHICULE"  => "$marque $modele $immatriculation $couleur $annee",
-               "QUANTITE"     => "1",
+               "NB JOUR"     => "$duree_jour",
                "DATE PRISE"      => "$date_debut",
-               "MONTANT HT" => "$prix",
+               "MONTANT HT" => "$prix" * "$duree_jour",
                "TVA"          => "20%" );
 $size = $pdf->addLine( $y, $line );
 $y   += $size + 2;
 
 $pdf->addCadreTVAs();
   
-$tot_prods = array( array ( "px_unit" => $prix, "qte" => 1, "tva" => 1 ));
+$tot_prods = array( array ( "px_unit" => "$prix" * "$duree_jour", "qte" => 1, "tva" => 1 ));
 $tab_tva = array( "1"       => 20,
                   "2"       => 5.5);
 $params  = array( "RemiseGlobale" => 1,
