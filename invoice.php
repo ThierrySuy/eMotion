@@ -1,6 +1,4 @@
 <?php
-
-
 require('fpdf.php');
 define('EURO', chr(128) );
 define('EURO_VAL', 6.55957 );
@@ -164,7 +162,7 @@ function fact_dev( $libelle, $num )
     $y2  = $y1 + 2;
     $mid = ($r1 + $r2 ) / 2;
     
-    $texte  = $libelle . " EN " . EURO . " : " . $num;    
+    $texte  = $libelle . " EN " . EURO . " N° : " . $num;    
     $szfont = 12;
     $loop   = 0;
     
@@ -290,7 +288,7 @@ function addEcheance( $date )
     $this->Line( $r1, $mid, $r2, $mid);
     $this->SetXY( $r1 + ($r2 - $r1)/2 - 5 , $y1+1 );
     $this->SetFont( "Arial", "B", 10);
-    $this->Cell(10,4, "DATE D'ECHEANCE", 0, 0, "C");
+    $this->Cell(10,4, "DATE DE LOCATION", 0, 0, "C");
     $this->SetXY( $r1 + ($r2-$r1)/2 - 5 , $y1 + 5 );
     $this->SetFont( "Arial", "", 10);
     $this->Cell(10,5,$date, 0,0, "C");
@@ -317,13 +315,13 @@ function addNumTVA($tva)
 function addReference($ref)
 {
     $this->SetFont( "Arial", "", 10);
-    $length = $this->GetStringWidth( "References : " . $ref );
+    $length = $this->GetStringWidth( "Références : " . $ref );
     $r1  = 10;
     $r2  = $r1 + $length;
     $y1  = 92;
     $y2  = $y1+5;
     $this->SetXY( $r1 , $y1 );
-    $this->Cell($length,4, "References : " . $ref);
+    $this->Cell($length,4, "Références : " . $ref);
 }
 
 function addCols( $tab )

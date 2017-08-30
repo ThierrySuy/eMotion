@@ -1,70 +1,75 @@
-﻿<?php
-
+<?php
+mb_internal_encoding('UTF-8'); 
+session_start(); 
 require('invoice.php');
 
-header('Content-Type: text/html; charset=utf-8');
+
+$bdd = new PDO('mysql:host=localhost;dbname=emotion', 'root', '');
+
+$id_loc = $_GET['loc'];
+
+
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
 $pdf->addSociete( "Emotion",
-                  "24 Rue de Rennes, 75006 Paris\n" .
+                  "24 Rue de Rennes\n" .
                   "75006 PARIS\n".
-                  "Capital : 120.000 " . EURO );
-$pdf->fact_dev( "Devis","Temporaire" ); 
-$pdf->addDate( "03/12/2003"); // Donnée dynamique
-$pdf->addClient("CL01"); // Donnée dynamique
+                  "Capital : 120000 " . EURO );
+$pdf->fact_dev( "Devis", "TEMPO" );
+$pdf->temporaire( "Emotion" );
+$pdf->addDate( "03/03/1995");
+$pdf->addClient("CL01");
 $pdf->addPageNumber("1");
-$pdf->addClientAdresse("Ste\nM. XXXX\n3eme etage\n33, rue Didier Druiot\n75000 PARIS"); // Donnée dynamique
-$pdf->addReglement("Cheque a reception de facture");
-$pdf->addEcheance("03/12/2003");
+$pdf->addClientAdresse("Ste\nM. XXXX\n3ème étage\n33, rue d'ailleurs\n75000 PARIS");
+$pdf->addReglement("Chèque à réception de facture");
+$pdf->addEcheance("03/03/1995");
 $pdf->addNumTVA("FR888777666");
-$pdf->addReference("Devis ... du ...."); // Donnée dynamique
+$pdf->addReference("Devis ... du ....");
 $cols=array( "ID VEHICULE"    => 23,
              "VEHICULE"  => 78,
-             "NB JOUR"     => 22,
+             "QUANTITE"     => 22,
              "P.U. HT"      => 26,
              "MONTANT H.T." => 30,
              "TVA"          => 11 );
 $pdf->addCols( $cols);
 $cols=array( "ID VEHICULE"    => "L",
              "VEHICULE"  => "L",
-             "NB JOUR"     => "C",
+             "QUANTITE"     => "C",
              "P.U. HT"      => "R",
              "MONTANT H.T." => "R",
              "TVA"          => "C" );
 $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols);
 
+
+$recup = $bdd->query("SELECT * FROM location WHERE id_location  = '$id_loc'");
+
+   while ( $ligne = $recup->fetch()) {
+ 
+  $numero_serie = $ligne['numero_serie'];
+  
+ } 
+
+ $donnees2 = $bdd->query("SELECT * FROM vehicule WHERE numero_serie = '$numero_serie'");
+
+  while ($ligne2 = $donnees2->fetch()) {
+ 
+  $marque = $ligne2['marque'];
+  $modele = $ligne2['modele'];
+
+
+ } 
+
 $y    = 109;
-
-
-if(isset($_POST['submit'])){
-// As output of $_POST['Color'] is an array we have to use foreach Loop to display individual value
-foreach ($_POST['Color'] as $select)
-{
-echo "You have selected :" .$select; // Displaying Selected Value
-}
-}
-
-
-$line = array( 
-               "ID VEHICULE"    => "REF1", // Données dynamique
-               "VEHICULE"  => "Mercedes Classe C\n" , // Données dynamique
-               "NB JOUR"     => "1\n" , // Données dynamique
-               "P.U. HT"      => "60.000", // Données dynamique
-               "MONTANT H.T." => "60.000", // Données dynamique
-               "TVA"          => "1" ); // Données dynamique
-$size = $pdf->addLine( $y, $line );
-$y   += $size + 2;
-
-/*$line = array( "REFERENCE"    => "REF2",
-               "DESIGNATION"  => "Câble RS232",
+$line = array( "ID VEHICULE"    => "$numero_serie",
+               "VEHICULE"  => "$marque $modele",
                "QUANTITE"     => "1",
-               "P.U. HT"      => "10.00",
-               "MONTANT H.T." => "60.00",
+               "P.U. HT"      => "600.00",
+               "MONTANT H.T." => "600.00",
                "TVA"          => "1" );
 $size = $pdf->addLine( $y, $line );
-$y   += $size + 2;*/
+$y   += $size + 2;
 
 $pdf->addCadreTVAs();
         
@@ -86,22 +91,22 @@ $pdf->addCadreTVAs();
 //                      "accompte"         => value    // montant de l'acompte (TTC)
 //                      "accompte_percent" => percent  // pourcentage d'acompte (TTC)
 //                  "Remarque" => "texte"              // texte
-$tot_prods = array( array ( "px_unit" => 600, "qte" => 1, "tva" => 1 ), // Données dynamique
-                    array ( "px_unit" =>  10, "qte" => 1, "tva" => 1 )); // Données dynamique
-$tab_tva = array( "1"       => 19.6, // Données dynamique
-                  "2"       => 5.5); // Données dynamique
+$tot_prods = array( array ( "px_unit" => 600, "qte" => 1, "tva" => 1 ),
+                    array ( "px_unit" =>  10, "qte" => 1, "tva" => 1 ));
+$tab_tva = array( "1"       => 19.6,
+                  "2"       => 5.5);
 $params  = array( "RemiseGlobale" => 1,
-                      "remise_tva"     => 1,       // {la remise s'applique sur ce code TVA} // Données dynamique
-                      "remise"         => 0,       // {montant de la remise} // Données dynamique
-                      "remise_percent" => 10,      // {pourcentage de remise sur ce montant de TVA} // Données dynamique
+                      "remise_tva"     => 1,       // {la remise s'applique sur ce code TVA}
+                      "remise"         => 0,       // {montant de la remise}
+                      "remise_percent" => 10,      // {pourcentage de remise sur ce montant de TVA}
                   "FraisPort"     => 1,
-                      "portTTC"        => 10,      // montant des frais de ports TTC // Données dynamique
-                                                   // par defaut la TVA = 19.6 % // Données dynamique
-                      "portHT"         => 0,       // montant des frais de ports HT // Données dynamique
-                      "portTVA"        => 19.6,    // valeur de la TVA a appliquer sur le montant HT // Données dynamique
+                      "portTTC"        => 10,      // montant des frais de ports TTC
+                                                   // par defaut la TVA = 19.6 %
+                      "portHT"         => 0,       // montant des frais de ports HT
+                      "portTVA"        => 19.6,    // valeur de la TVA a appliquer sur le montant HT
                   "AccompteExige" => 1,
-                      "accompte"         => 0,     // montant de l'acompte (TTC) // Données dynamique
-                      "accompte_percent" => 15,    // pourcentage d'acompte (TTC) // Données dynamique
+                      "accompte"         => 0,     // montant de l'acompte (TTC)
+                      "accompte_percent" => 15,    // pourcentage d'acompte (TTC)
                   "Remarque" => "Avec un acompte, svp..." );
 
 $pdf->addTVAs( $params, $tab_tva, $tot_prods);
