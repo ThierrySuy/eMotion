@@ -9,7 +9,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=emotion', 'root', '');
 
 $id_loc = $_GET['loc'];
 
-$recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_user AND l.id_location  = '$id_loc'");
+$recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_user AND l.id_location  = '$id_loc'"); // requête pour pointer les tables concernant les données du tableau et le client
 
    while ( $ligne = $recup->fetch()) {
  
@@ -93,7 +93,6 @@ $params  = array( "RemiseGlobale" => 1,
                       "remise_percent" => 10,      // {pourcentage de remise sur ce montant de TVA}
                   "FraisPort"     => 5,
                       "portTTC"        => 10,      // montant des frais de ports TTC
-                                                   // par defaut la TVA = 19.6 %
                       "portHT"         => 0,       // montant des frais de ports HT
                       "portTVA"        => 19.6,    // valeur de la TVA a appliquer sur le montant HT
                   "AccompteExige" => 1,

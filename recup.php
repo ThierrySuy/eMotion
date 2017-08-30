@@ -13,8 +13,7 @@
 				$ville=$_POST["ville"];
 				$telephone=$_POST["telephone"];
 				$numero_permis=$_POST["numero_permis"];
-				
-				
+			
 	
 			    $sql = "INSERT INTO user (id_user, pass, mail, nom, prenom, adresse, code_postal, ville, telephone, numero_permis, role, point_fidelite) VALUES(NULL,'$pass', '$mail', '$nom', '$prenom', '$adresse', '$code_postal', '$ville', '$telephone', '$numero_permis', '2', '10')";
 

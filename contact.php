@@ -39,7 +39,7 @@ include('/header.php');
                     
                     <form id="contact-us" method="post" action="./envoyer.php">
 
-                    <div class="container-fluid col-xs-12">
+                    <div class="container-fluid col-xs-11">
 
                         <div class="col-xs-3 col-md-offset-1">
                             
@@ -47,7 +47,7 @@ include('/header.php');
 
                         </div>
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-3 ">
                             
                             <input type="text" name="prenom" id="prenom" required="required" class="form" placeholder="Prenom" />
 
@@ -55,15 +55,15 @@ include('/header.php');
 
                     </div>
 
-                        <div class="col-xs-6 col-md-offset-1">
+                        <div class="container-fluid col-xs-6 col-md-offset-1">
                             
                             <input type="mail" name="mail" id="mail" required="required" class="form" placeholder="Email" />
 
                         </div>
 
-                    <div class="container-fluid col-xs-12 col-md-offset-1">
+                    <div class="container-fluid col-xs-11 ">
 
-                        <div class="col-xs-3">
+                        <div class="col-xs-3 col-md-offset-1">
                             
                             <input type="text" name="sujet" id="sujet" required="required" class="form" placeholder="Sujet" />
 
