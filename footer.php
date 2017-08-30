@@ -13,7 +13,7 @@
                     <p><a href ="contact.php">Nous contacter</a></p>
                 </div>
                 <div class="sitemap">
-                    <img src="images/contact-phone.png" width="20" height="20"/><p>+33 01 23 45 67 89</p>
+                    <p><img src="images/contact-phone.png" width="20" height="20"/> +33 01 23 45 67 89</p>
                     <img src="images/contact-mail.png" width="20" height="20"/> <a href="mailto:emotion@contact.com">emotion@contact.com</a>
                     <img src="images/icon-instagram.png" width="20" height="20"/>
                     <img src="images/icon-facebook.png" width="20" height="20"/>
