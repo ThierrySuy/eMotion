@@ -1,3 +1,4 @@
+
 <?php
 mb_internal_encoding('UTF-8'); 
 session_start(); 
@@ -40,11 +41,10 @@ $recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_us
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
-$pdf->addSociete( echo "<img src=\"images/logo-color.png\"  />" .
-                  "Emotion" .
+$pdf->addSociete( "Emotion",
                   "24 Rue de Rennes\n" .
                   "75006 PARIS\n".
-                  "Capital : 120000 " . EURO );
+                  "Capital : 20M " . EURO );
 $pdf->fact_dev( "Facture Num.", "$id_location" );
 $pdf->temporaire( "Emotion" );
 
