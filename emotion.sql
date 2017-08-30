@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 28 Août 2017 à 07:16
+-- Généré le :  Mer 30 Août 2017 à 09:37
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -49,7 +49,9 @@ INSERT INTO `location` (`id_location`, `id_user`, `numero_serie`, `date_debut`, 
 (14, 6, '15fg87gds4sd4', '2017-08-26', '2017-08-30', 1, 1),
 (20, 8, '1HGCM82633A004352', '2017-08-27', '2017-08-28', 1, 1),
 (23, 9, '1HGCM82633A004352', '2017-08-29', '2017-08-31', 1, 1),
-(25, 9, 'KV1PMJKDINCzel', '2017-08-29', '2017-08-31', 1, 1);
+(25, 9, 'KV1PMJKDINCzel', '2017-08-29', '2017-08-31', 1, 1),
+(26, 1, 'ZEIGH515ZEG', '2017-08-17', '2017-08-31', 1, 14),
+(27, 9, '0kbqdYpEjM0KNo', '2017-09-30', '2017-10-05', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `pass`, `mail`, `nom`, `prenom`, `adresse`, `code_postal`, `ville`, `telephone`, `numero_permis`, `role`, `point_fidelite`) VALUES
 (9, '123456', 'riesco.maxime@gmail.com', 'Riesco', 'Maxime', '37 rue marcelin berthelot', 91330, 'Yerres', '0699728086', '0124hoodeh', 2, 425),
-(10, 'admin', 'admin@admin.fr', 'Admin', 'Admin', '12 rue des admin', 75014, 'Paris', '0123456789', 'admin91', 4, 10);
+(10, 'admin', 'admin@admin.fr', 'Admin', 'Admin', '12 rue des admin', 75014, 'Paris', '0123456789', 'admin91', 4, 10),
+(11, 'aaaa', 'suy.thierry21@gmail.com', 'Suy', 'Thierry', '2 Rue test', 94380, 'Bonneuil', '0144556655', 'ZG4154', 2, 10);
 
 -- --------------------------------------------------------
 
@@ -125,17 +128,17 @@ CREATE TABLE `vehicule` (
 --
 
 INSERT INTO `vehicule` (`numero_serie`, `marque`, `modele`, `couleur`, `immatriculation`, `id_type_vehicule`, `prix`, `annee`, `date_achat`, `prix_achat`, `kilometres`, `ville`) VALUES
-('0kbqdYpEjM0KNo', 'RENAULT', 'ZOEE', 'Gris', 'OF-899-YE', 2, '17', 2013, '2015-07-04', '14483', '23893', 1),
-('15fg87gds4sd4', 'Peugeot', '408', 'rouge', 'HU-496-LV', 2, '50', 2015, '2017-07-12', '16500', '15000', 2),
-('1HGCM82633A004352', 'Ferrari', '458 italia', 'rouge', 'HU-496-LV', 2, '150', 2008, '2014-07-20', '1500000', '3000', 2),
-('4785ETUI', 'Renault', 'Kadjar', 'Bleu', 'PM-789-PO', 2, '150', 2017, '2017-07-22', '150000', '150', 1),
-('8ONgNAF3VavavO', 'BMW', 'I3', 'NOIRE', 'YF-899-YE', 1, '25', 2015, '2017-01-20', '10000', '6455', 3),
-('8pdmNAF3VavavO', 'porsche', 'Cayen', 'ROUGE', 'ML-488-DF', 2, '120', 2015, '2017-08-16', '100000', '1500', 3),
-('ANOnQnqty2KxqX', 'NISSAN', 'LEAF', 'Blanc', 'EF-219-DU', 2, '15', 2010, '2016-06-14', '15483', '15', 1),
-('BUFCRG09JyTWVA', 'BMW', 'W EVOLUTION', 'Noir', 'RK-895-AA', 1, '25', 2016, '2016-07-04', '10293', '3672', 2),
-('GGGK796', 'Renault', 'Clio', 'Bleu', 'AN-090-EL', 2, '42', 2016, '2016-07-06', '6000', '156', 2),
-('GheleBUzODaXeL', 'PEUGEOT', 'METROPOLIS ACTIVE', 'Blanc', 'ZK-892-AA', 1, '15', 2016, '2016-07-04', '8059', '2678', 1),
-('KV1PMJKDINCzel', 'TESLA', 'MODEL S', 'Gris', 'AA-896-YT', 2, '70', 2016, '2016-07-04', '89678', '16432', 3);
+('0kbqdYpEjM0KNo', 'RENAULT', 'ZOEE', 'Gris', 'AA-001-AA', 2, '75', 2013, '2015-07-04', '14000', '800', 1),
+('15fg87gds4sd4', 'BeeBee', 'XS', 'Rouge', 'AA-001-BB', 2, '75', 2015, '2017-07-12', '23880', '800', 2),
+('1HGCM82633A004352', 'KIA', 'SOUL EV', 'Noir', 'AA-001-CC', 2, '250', 2008, '2014-07-20', '20000', '800', 2),
+('4785ETUI', 'BMW', 'i8', 'Noir/Bleu', 'AA-001-DD', 2, '300', 2017, '2017-07-22', '150000', '800', 1),
+('8ONgNAF3VavavO', 'BMW', 'i3', 'Gris', 'AA-001-EE', 2, '300', 2015, '2017-01-20', '30000', '800', 3),
+('8pdmNAF3VavavO', 'BMW', 'C EVOLUTION', 'Noir', 'AA-001-FF', 1, '500', 2015, '2017-08-16', '15000', '800', 3),
+('ANOnQnqty2KxqX', 'NISSAN', 'LEAF', 'Blanc', 'AA-001-GG', 2, '90', 2010, '2016-06-14', '16000', '800', 1),
+('BUFCRG09JyTWVA', 'PEUGEOT', 'iOn', 'Noir', 'LP-080-MR', 2, '85', 2016, '2016-07-04', '14000', '800', 2),
+('GGGK796', 'TESLA', 'MODEL S', 'Bleu', 'LP-091-MR', 2, '200', 2016, '2016-07-06', '135000', '800', 2),
+('GheleBUzODaXeL', 'ZERO MOTORCYCLES', 'Zero DS', 'Blanc', 'JR-913-NR', 1, '150', 2016, '2016-07-04', '8000', '800', 1),
+('KV1PMJKDINCzel', 'MISTUBISHI', 'I-MiEV', 'Gris', 'MR-227-LP', 1, '100', 2016, '2016-07-04', '8000', '800', 3);
 
 -- --------------------------------------------------------
 
@@ -154,8 +157,7 @@ CREATE TABLE `ville` (
 
 INSERT INTO `ville` (`id_ville`, `nom`) VALUES
 (1, 'Paris'),
-(2, 'Lyon'),
-(3, 'Marseille');
+(2, 'Lyon');
 
 --
 -- Index pour les tables exportées
@@ -194,12 +196,12 @@ ALTER TABLE `vehicule`
 -- AUTO_INCREMENT pour la table `location`
 --
 ALTER TABLE `location`
-  MODIFY `id_location` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_location` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

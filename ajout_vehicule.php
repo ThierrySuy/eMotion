@@ -115,7 +115,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 4)) {
                                         <option value="">[Choisir ...]</option>
                                         <option value="1">Paris</option>
                                         <option value="2">Lyon</option>
-                                        <option value="2">Marseille</option>
                                     </select>
                                 </div><br>
                                 <div class="form-group">

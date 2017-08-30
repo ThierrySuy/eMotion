@@ -5,7 +5,13 @@ footer .top-footer {
   justify-content: center;
   align-items: center;
   margin-top: 300px;
+<<<<<<< HEAD
   padding-bottom: : 150px;
+=======
+  padding-bottom: 150px;
+  position: absolute;
+  bottom: 0;
+>>>>>>> 1d8d65acd93f21b37b595e76803cbc5116fe3eda
 }
 footer .top-footer .sitemap {
   width: 200px;
