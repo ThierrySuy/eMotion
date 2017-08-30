@@ -4,7 +4,6 @@ include 'header.php';
 if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_SESSION['Auth']['role'] == 4)) {
     $role = $_SESSION['Auth']['role'];
     $id = $_SESSION['id'];
-    //var_dump($_SESSION);
 } else {
     header('Location:index.php');
 }
@@ -55,16 +54,11 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                     }
                                     ?>
                                     <?php
-                                    // $id = $_GET['id'];
                                     $donnees = $bdd->query("SELECT * FROM location l, vehicule v"
                                             . " WHERE v.numero_serie = l.numero_serie"
                                             . " AND l.id_user = " . $_SESSION['id'] . "");
-                                    // echo $id_client = $_POST['id'];
-                                    //$donnees = $bdd->query("SELECT * FROM location WHERE id_client = '$id'");
                                     while ($ligne = $donnees->fetch()) {
-
                                         $id_loc = $ligne['id_location'];
-                                        
                                         ?>
                                         <!-- Ajout des lignes présentes dans la Base De Données -->
                                     <tr>
@@ -82,7 +76,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                         <td><a href="facture.php?loc=<?php echo $id_loc; ?>" target="_blank">Obtenir la facture</a></td>
                                     </tr>
                                 <?php } 
-
                                 ?>
                             </tbody>
                         </table>

@@ -18,11 +18,7 @@ Class Auth{
             return false;
         }
     }
-
     function Loggin(){
-
     }
 }
-
-
 ?>

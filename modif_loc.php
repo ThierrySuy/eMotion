@@ -4,7 +4,6 @@ include 'header.php';
 if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_SESSION['Auth']['role'] == 4)) {
     $role = $_SESSION['Auth']['role'];
     $id = $_SESSION['id'];
-    //var_dump($_SESSION);
 } else {
     header('Location:index.php');
 }
@@ -50,13 +49,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                         <form action="recup_modif_loc.php" method="POST">
                             <input name="id_location" type="hidden" value="<?php echo $_GET['id']; ?>">  
                             <fieldset>
-                                <!-- Text input-->
-<!--                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="id_location">ID de la location *</label>
-                                    <div class="col-md-5">
-                                        <input id="id_location" name="id_location" type="int" placeholder="ID client de la location." class="form-control input-md" value="<?php echo $id_location; ?>" required="">
-                                    </div>
-                                </div>-->
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="id_user">ID client de la location *</label>
                                     <div class="col-md-5">
