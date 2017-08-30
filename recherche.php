@@ -47,9 +47,9 @@ include('/header.php');
             
              $lesimages .= ' AND( l.date_debut < "'.$date_prise.'" AND l.date_fin > "'.$date_rendu.'" OR l.date_debut < "'.$date_rendu.'" AND l.date_fin > l.date_debut) AND l.numero_serie = v.numero_serie';
              }
-             var_dump($lesimages);
+           
             $qimg = mysqli_query($base, $lesimages);
-            mysqli_error($base);
+
            
          
          
