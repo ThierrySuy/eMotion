@@ -109,7 +109,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                                     function insert_loc($id_user, $numero_serie, $date_debut, $date_fin, $duree_jour) {
                                         $base = mysqli_connect('localhost', 'root', '', 'emotion');
 
-                                        echo $laquery = "INSERT INTO `location` (`id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (" . $id_user . ", '" . $numero_serie . "', '" . $date_debut . "', '" . $date_fin . "',0, '" . $duree_jour . "')";
+                                        $laquery = "INSERT INTO `location` (`id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (" . $id_user . ", '" . $numero_serie . "', '" . $date_debut . "', '" . $date_fin . "',0, '" . $duree_jour . "')";
 
                                         $result = mysqli_query($base, $laquery);
                   
