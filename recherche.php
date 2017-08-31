@@ -105,9 +105,9 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
                    
                             </div>
                             <div class="form-group">
-                                <label>choisir la Date de début de location (YYYY/MM/DD): </label>
+                                <label class="eltitulo">choisir la Date de début de location (YYYY/MM/DD): </label>
                                 <input  name="date_debut" type="date" placeholder="YYYY/MM/DD" class="form-control input-md" required="">
-                                <label>choisir la Date de fin de location (YYYY/MM/DD) : </label>
+                                <label class="eltitulo">choisir la Date de fin de location (YYYY/MM/DD) : </label>
                                 <input  name="date_fin" type="date" placeholder="YYYY/MM/DD" class="form-control input-md" required="">
                             </div>
                         </ul>

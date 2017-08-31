@@ -22,13 +22,14 @@
 
 		<img src="./images/slogan.png">
 
-		<blockquote class="col-md-6 col-sm-offset-3" class="blockquote"></br></br>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat venenatis diam quis blandit. Donec ornare felis sed lacinia maximus. Morbi fermentum mollis purus ac cursus. Vestibulum hendrerit non lectus finibus pharetra. Etiam eu velit felis. Nullam tincidunt tempus arcu, et porttitor velit blandit sed. Suspendisse tincidunt nibh leo, in volutpat diam fringilla in. Duis at lectus id magna malesuada bibendum et vel libero.
+		<div class="col-md-6 col-sm-offset-3" class="blockquote"></br></br>
+  <p>Emotion est une entreprise de location de voiture française. Elle est à la fois une entreprise familiale et internationale. Créée en 1912 par IPSSI Emotion avec seulement sept voitures, aujourd’hui nous vous offrons nos services dans plus de 105 pays à travers le monde.
+Emotion s’engage à vous offrir un service premium et une voiture de location qui vous conviennent. Notre personnel hautement qualifié fera tout pour satisfaire vos envies et vos besoins.
+Que vous ayez besoin d'une petite voiture, d’une voiture compacte ou d’un break spacieux, notre flotte  vous propose des véhicules neufs, en moyenne six mois d’ancienneté, de grandes marques telles que BMW, Audi, VW et Mercedes-Benz. </p>
 
 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 
-</blockquote>
-
+</div>
 
 </br></br></br></br></br>
 </br></br></br></br></br>
