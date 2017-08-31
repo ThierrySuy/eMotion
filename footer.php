@@ -15,9 +15,9 @@
                 <div class="sitemap">
                     <p><img src="images/contact-phone.png" width="20" height="20"/> +33 01 23 45 67 89</p>
                     <img src="images/contact-mail.png" width="20" height="20"/> <a href="mailto:emotion@contact.com">emotion@contact.com</a>
-                    <img src="images/icon-instagram.png" width="20" height="20"/>
-                    <img src="images/icon-facebook.png" width="20" height="20"/>
-                    <img src="images/icon-twitter.png" width="20" height="20"/> 
+                    <a href="//www.instagram.com"><img src="images/icon-instagram.png" width="20" height="20"/></a>
+                    <a href="//www.facebook.com"><img src="images/icon-facebook.png" width="20" height="20"/></a>
+                    <a href="//www.twitter.com"><img src="images/icon-twitter.png" width="20" height="20"/></a>
                 </div>
             </div>
 
@@ -26,8 +26,6 @@
                     <p class="copyright">© 2017 EMOTION - Tous droits réservés - <a href="mentions-legales.php">Mentions légales</a></p>
                 </div>
             </div>
-
-            
         </footer>
         <br/>
     </center></body>
