@@ -22,7 +22,6 @@
 
     <div class="row">
     
-    <nav class="navbar navbar-inverse col-md-12">
     <div class="container-fluid">
         <div class="col-md-offset-5">
         
