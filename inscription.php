@@ -65,7 +65,7 @@
 		
 		</br></br>
 
-		<input placeholder="Telephone" type="number" class="form-control" name="telephone" value="<?php if (isset($_POST['telephone'])) echo htmlentities(trim($_POST['telephone'])); ?>" required="">
+		<input placeholder="Telephone" type="text" class="form-control" name="telephone" value="<?php if (isset($_POST['telephone'])) echo htmlentities(trim($_POST['telephone'])); ?>" required="">
 
 		</br></br>
 
