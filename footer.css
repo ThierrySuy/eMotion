@@ -1,6 +1,6 @@
 footer .top-footer {
   height: 150px;
-  background: #434343;
+  background: #FFDA8F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@ footer .top-footer .sitemap p {
 }
 footer .bottom-footer {
   height: 60px;
-  background: #313131;
+  background: #000000;
   text-align: center;
 }
 footer .bottom-footer .bottom-footer-divider {

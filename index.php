@@ -67,7 +67,7 @@
       <a href="recherche.php"><img id="car" src="./images/scooter-01.png" alt="car" height="500px" width="500px"> <img id="promo" src="./images/promo-km-offert.png" alt="Los Angeles" height="150" width="150px"></a>
     </div>
 
-    <div class="item">
+    <div class="item
       <a href="recherche.php"><img id="car" src="./images/car-06.png" alt="scooter" height="500px" width="500px"> <img id="promo" src="./images/promo-payez-moins.png" alt="Los Angeles" height="150" width="150px"></a>
     </div>
 

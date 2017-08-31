@@ -6,6 +6,7 @@ $destinataire = 'suy.thierry21@gmail.com';
 $expediteur = 'suy.thierry21@gmail.com';
 
 $objet = 'Test'; 
+
 $headers  = 'MIME-Version: 1.0' . "\n";
 $headers .= 'Reply-To: '.$expediteur."\n"; 
 $headers .= 'From: "Nom_de_expediteur"<'.$expediteur.'>'."\n";
@@ -20,8 +21,5 @@ else // Non envoyé
 {
     echo "Votre message n'a pas pu être envoyé";
 }
-
-ini_set("SMTP","smtp.gmail.com");
-ini_set("sendmail_from","suy.thierry21@gmail.com");
 
 ?>
