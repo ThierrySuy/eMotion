@@ -79,7 +79,6 @@
             } else {
                 echo "
           <li><a href='notre-philosophie.php'>Notre philosophie</a></li>
-          <li><a href='recherche.php'>Louer un véhicule</a></li>
           <li><a href='carte-agence.php'>Carte des agences</a></li>
           <li><a href='connexion.php'>Me connecter</a></li>
           <li><a href='contact.php'>Nous Contacter</a></li>";
