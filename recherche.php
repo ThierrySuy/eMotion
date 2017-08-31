@@ -1,8 +1,11 @@
 <?php 
 include('/header.php'); 
-  if (isset($_SESSION['Auth']['role'])) {
-      $role = $_SESSION['Auth']['role'];
-  }
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_SESSION['Auth']['role'] == 4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id = $_SESSION['id'];
+} else {
+    header('Location:index.php');
+}
 ?>
 
 <!DOCTYPE html>

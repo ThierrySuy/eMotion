@@ -54,6 +54,11 @@
         <span> <a href="index.php"><img src="images/logo-color.png" alt="Emotion" style="width:75px; height:50px;"></img></a></span>
         <button class="hamburger">&#9776;</button>
         <button class="cross">&#735;</button>
+        <?php if (isset($_SESSION['Auth']['role'])) { ?>
+    <a class=" col-md-offset-4 btn btn-success eltitulo" href="recherche.php">Louer un véhicule</a>
+    <?php }
+    else{ 
+      } ?>
     </header>
 
 

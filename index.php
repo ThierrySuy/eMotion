@@ -25,11 +25,7 @@
     <nav class="navbar navbar-inverse col-md-12">
     <div class="container-fluid">
         <div class="col-md-offset-5">
-        <?php if (isset($_SESSION['Auth']['role'])) { ?>
-    <a class="btn btn-success eltitulo" href="recherche.php">Louer un véhicule</a>
-    <?php }
-    else{ 
-      } ?>
+        
     </div>
     </div>
 </nav>
