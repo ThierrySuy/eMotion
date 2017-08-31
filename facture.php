@@ -15,6 +15,7 @@ $recup = $bdd->query("SELECT * FROM location l, user u WHERE u.id_user = l.id_us
  
   $numero_serie = $ligne['numero_serie'];
   $date_debut = $ligne['date_debut'];
+  $date_fin = $ligne['date_fin'];
   $nom = $ligne['nom'];
   $prenom = $ligne['prenom'];
   $adresse = $ligne['adresse'];
