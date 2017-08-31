@@ -1,62 +1,69 @@
+<?php
+include('/header.php');
+if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_SESSION['Auth']['role'] == 4)) {
+    $role = $_SESSION['Auth']['role'];
+    $id = $_SESSION['id'];
+} else {
+    header('Location:index.php');
+}
+?>
 <!Doctype html>
 <html>
     <title>Récapitulatif</title>
-
-    <?php include('/header.php'); ?>
-
-    <div class="container">
+    s<div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
-               <?php if(isset($_POST['modele'])) { ?>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th class="text-center">Price</th>
+                <?php if (isset($_POST['modele'])) { ?>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th class="text-center">Price</th>
 
-                            <th> </th>
-                        </tr>
-                    </thead>
+                                <th> </th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr>
-                            <td class="col-sm-8 col-md-6">
-                                <div class="media">
-                                    
-                                     <img class="media-object" src="https://m.bmw.fr/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/navigation/BMW-4-Series-Gran-Coupe-ModelCard.png" style="width: 72px; height: 72px;"> 
-                                    <div class="media-body">
-                                        <h4 class="media-heading"><?php echo $_POST['modele'];?></h4>
-                                        <h5 class="media-heading"><?php echo $_POST['marque'];?></h5>
-                                        <span>Status: </span><span class="text-success"><strong>En Stock</strong></span>
-                                    </div>
-                                </div></td>
-                            <td class="col-sm-1 col-md-1" style="text-align: center">
-                                <input type="email" class="form-control" id="exampleInputEmail1" value="1">
-                            </td>
-                            <td class="col-sm-1 col-md-1 text-center"><strong><?php echo $_POST['prix'];?>€ /J</strong></td>
+                        <tbody>
+                            <tr>
+                                <td class="col-sm-8 col-md-6">
+                                    <div class="media">
 
-                            <td class="col-sm-1 col-md-1">
-                                <a href="recherche.php" class="btn btn-large btn-danger">  Retour
-                                </a></td>
-                        </tr>
+                                        <img class="media-object" src="https://m.bmw.fr/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/navigation/BMW-4-Series-Gran-Coupe-ModelCard.png" style="width: 72px; height: 72px;"> 
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><?php echo $_POST['modele']; ?></h4>
+                                            <h5 class="media-heading"><?php echo $_POST['marque']; ?></h5>
+                                            <span>Status: </span><span class="text-success"><strong>En Stock</strong></span>
+                                        </div>
+                                    </div></td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="1">
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong><?php echo $_POST['prix']; ?>€ /J</strong></td>
 
-                        <tr>
-                            
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>
-                                    <?php } 
-                                    
-                                    if(!isset($_POST['modele'])){ ?>
-                                        
-                                <h1 class='col-md-offset-2'> VOTRE COMMANDE A BIEN ETE RECU !! </h1>
-                                <a href="index.php" class="btn btn-large btn-danger col-md-4 col-md-offset-4">  Retour A l'accueil
-                                </a>
-                                    <?php }  ?> 
-                                <?php if (isset($_POST['id'])) { ?>
-                                
+                                <td class="col-sm-1 col-md-1">
+                                    <a href="recherche.php" class="btn btn-large btn-danger">  Retour
+                                    </a></td>
+                            </tr>
+
+                            <tr>
+
+                            </tr>
+                            <tr>
+                                <td>   </td>
+                                <td>
+                                <?php }
+
+                                if (!isset($_POST['modele'])) {
+                                    ?>
+
+                                    <h1 class='col-md-offset-2'> VOTRE COMMANDE A BIEN ETE RECU !! </h1>
+                                    <a href="index.php" class="btn btn-large btn-danger col-md-4 col-md-offset-4">  Retour A l'accueil
+                                    </a>
+                                <?php } ?> 
+<?php if (isset($_POST['id'])) { ?>
+
                                     <form action="" method="post">
                                         <input type="hidden" name="insert_loc">
                                         <input type="hidden" name="id2" value="<?php echo $_POST['id']; ?>">
@@ -64,7 +71,7 @@
                                         <input type="hidden" name="id4" value="<?php echo $_POST['date_fin']; ?>">  
                                         <input type="submit" name="envoiForm">
                                     </form>
-                                <?php } ?> 
+<?php } ?> 
                             </td>
 
                             <td>
@@ -103,22 +110,15 @@
 
                                     function insert_loc($id_user, $numero_serie, $date_debut, $date_fin, $duree_jour) {
                                         $base = mysqli_connect('localhost', 'root', '', 'emotion');
-                                        
+
                                         $laquery = "INSERT INTO `location` (`id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (" . $id_user . ", '" . $numero_serie . "', '" . $date_debut . "', '" . $date_fin . "',0, '" . $duree_jour . "');";
-                                        $result = mysqli_query($base, $laquery );
-                                        
-                                        
-                                        return $result ; 
-                                        
+                                        $result = mysqli_query($base, $laquery);
+
+
+                                        return $result;
                                     }
 
                                     if (isset($_POST['insert_loc'])) {
-
-
-                                        
-
-
-                                       
                                         
                                     }
                                 }

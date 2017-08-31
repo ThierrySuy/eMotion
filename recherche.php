@@ -13,8 +13,6 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
     <head>
 
         <title>Recherche</title>
-
-     
         <?php
         $base = mysqli_connect('localhost', 'root', '','emotion');
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
