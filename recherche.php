@@ -18,7 +18,8 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
         if (isset($_POST["ville"]) && isset($_POST["type"])) {
             $ville =  securite_bdd($_POST["ville"]);
             $type =  securite_bdd($_POST["type"]);
-           
+           $date_prise = securite_bdd($_POST['date_debut']);
+             $date_rendu = securite_bdd($_POST['date_fin']);
             
             $lesimages = "";
 
@@ -26,30 +27,27 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
 
     
 
-            $lesimages .= "SELECT v.* FROM vehicule v INNER JOIN  type_vehicule t ON v.id_type_vehicule = t.id_type_vehicule INNER JOIN location l ON l.numero_serie = v.numero_serie ";
+            $lesimages .= "SELECT * FROM vehicule WHERE numero_serie NOT IN (SELECT numero_serie from location where (date_debut between '".$date_prise."' AND '".$date_rendu."' OR date_fin between '".$date_prise."' AND '".$date_rendu."'))";
             
             if (isset($_POST["ville"])){
-                $lesimages .= "AND v.ville =  '". $ville ."'  ";
+                $lesimages .= "AND ville =  '". $ville ."'  ";
             }
             if ($_POST["type"]) {
-            $lesimages .= "AND v.id_type_vehicule = '" . $type."'";
+            $lesimages .= "AND id_type_vehicule = '" . $type."'";
         }
             
              if (isset($_POST['couleur'])){
                   $couleur = securite_bdd($_POST["couleur"]);
-                 $lesimages .= "AND v.couleur = '".$couleur."'";
+                 $lesimages .= "AND couleur = '".$couleur."'";
                  }
              if(isset ($_POST['model'])){
-                 $lesimages .= "AND v.modele = '".$modele."'";
+                 $lesimages .= "AND modele = '".$modele."'";
              }    
-             if (isset ($_POST['date_debut']) && isset ($_POST['date_fin'])) {
-             $date_prise = securite_bdd($_POST['date_debut']);
-             $date_rendu = securite_bdd($_POST['date_fin']);
-            
-             $lesimages .= 'AND(( l.date_debut > "'.$date_rendu.'") OR (l.date_fin < "'.$date_prise.'")) GROUP BY v.numero_serie';
-             }
+          
            
             $qimg = mysqli_query($base, $lesimages);
+            var_dump($lesimages);
+            echo mysqli_error($base);
 
     
           

@@ -76,9 +76,7 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
 
                             <td>
 
-                        <!--<input type="button" value="Confirmer" onClick="maFonction()" class="btn btn-success" /><span class="glyphicon glyphicon-play"></span>
-
-                         <a href="./cb.php"><button type="button" class="btn btn-success">Confirmer <span class="glyphicon glyphicon-play"></span></a> -->
+     
 
                                 <?php
                                 if (isset($_POST['envoiForm'])) {
@@ -106,21 +104,25 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
 
 
 
-                                    /* $select = SELECT * FROM vehicule WHERE vehicule = $_POST["$vehicule"]; */
+                 
 
                                     function insert_loc($id_user, $numero_serie, $date_debut, $date_fin, $duree_jour) {
                                         $base = mysqli_connect('localhost', 'root', '', 'emotion');
 
-                                        $laquery = "INSERT INTO `location` (`id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (" . $id_user . ", '" . $numero_serie . "', '" . $date_debut . "', '" . $date_fin . "',0, '" . $duree_jour . "');";
+                                        echo $laquery = "INSERT INTO `location` (`id_user`, `numero_serie`, `date_debut`, `date_fin`, `etat_location`, `duree_jour`) VALUES (" . $id_user . ", '" . $numero_serie . "', '" . $date_debut . "', '" . $date_fin . "',0, '" . $duree_jour . "')";
+
                                         $result = mysqli_query($base, $laquery);
+                  
 
 
                                         return $result;
                                     }
 
-                                    if (isset($_POST['insert_loc'])) {
-                                        
+                                    if (isset($_POST['insert_loc'])) {echo "<br>";
+                                       
+                                        insert_loc($id_user, $vehicule, $date_debut, $date_fin, $duree_jour);
                                     }
+                
                                 }
                                 ?>
 
@@ -133,6 +135,8 @@ if (isset($_SESSION['Auth']['role']) && ($_SESSION['Auth']['role'] == 2) || ($_S
 
                     </tbody>
                 </table>
+            </div>
+
             </div>
         </div>
     </div>
